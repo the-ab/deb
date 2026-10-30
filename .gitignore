@@ -2,3 +2,5 @@
 .gnupg/
 *.secret*
 *.key
+__pycache__/
+*.pyc
