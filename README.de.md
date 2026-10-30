@@ -13,5 +13,3 @@ Weitere Projekte erhalten eigene Komponenten in `repository.json` und passende A
 Auf Ubuntu 26.04 armhf ODROID-U3: `sudo apt update`, danach `sudo apt install linux-image-odroid-u3` und `odroid-kernel status`. Anschließend zu einem passenden Zeitpunkt neu starten. Der separate alte Kernel heißt `linux-image-6.12.114-odroidu3-v1`. Kein automatischer Neustart und keine boot0-Änderung. Die Boardwerkzeuge benötigen Python 3.11 oder neuer; Ubuntu 26.04 armhf ist das unterstützte und getestete Ziel.
 
 Werkzeuge1.0.2 legen versionierte Dateien direkt unter `/boot` ab. Vorhandene Paketversionen niemals mit anderen Bytes überschreiben. Entfernen alter Versionen erfordert ausdrücklichen Nutzerumfang und geprüften Ersatz; installierte Clientkernel werden dadurch nicht gelöscht.
-
-Werkzeuge1.0.2 legen versionierte Dateien direkt unter `/boot` ab. Vorhandene Paketversionen niemals mit anderen Bytes überschreiben. Entfernen alter Versionen erfordert ausdrücklichen Nutzerumfang und geprüften Ersatz; installierte Clientkernel werden dadurch nicht gelöscht.
