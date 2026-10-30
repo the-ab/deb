@@ -95,5 +95,7 @@
     "Linux7 capture/I2S RX-DMA warning, full rendering/peripheral and long-term validation remain open",
     "CVE review is dated published Linux CNA/config/source triage, not a guarantee against future or undisclosed defects",
     "No boot0 firmware or image binaries are published here"
-  ]
+  ],
+  "historical": true,
+  "superseded_by": "u3-server-2026-10-30.json"
 }
