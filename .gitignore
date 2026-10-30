@@ -1,0 +1,4 @@
+*.partial
+.gnupg/
+*.secret*
+*.key
