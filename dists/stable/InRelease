@@ -5,7 +5,7 @@ Origin: the-ab
 Label: the-ab packages
 Suite: stable
 Codename: stable
-Date: Fri, 30 Oct 2026 21:19:27 +0000
+Date: Fri, 30 Oct 2026 21:20:58 +0000
 Architectures: armhf
 Components: main u3
 Acquire-By-Hash: yes
@@ -13,17 +13,17 @@ Description: Signed packages maintained by the-ab
 SHA256:
  ad88ff95848e137641fa90c5be017574c3288e0a3aed1a3636a27a9fd425f69e 537 main/binary-armhf/Packages
  2c36e452eab0c418fbd8c227e6566cbbf41f1f00803c3b10ba22c0c1fb2f2c31 448 main/binary-armhf/Packages.xz
- 9aa2407c6fd0aed3bd91d83bc043563fbaf5addb7b7c55b1548a5d46fdfd59b1 4843 u3/binary-armhf/Packages
- 346c31644ff6a924f9b3c23a3423962a83abb7170e8578b3282f48471c38ca22 1528 u3/binary-armhf/Packages.xz
+ 26e16d37a1d2bb6fad63c24cf8f5afc5da93fcf6e272c2a0814b9834bda0fd40 2446 u3/binary-armhf/Packages
+ f2d4207b441ff786389216fece6e0baaac1e5681cebb494415fa6d89f0e57b02 1008 u3/binary-armhf/Packages.xz
 SHA512:
  32717a222b81c24c88372e1026984b818d3b5975f4f40cff617fa297accb6a48be0708a0097218ddffb308ada7ad599a6a4bc21b882ba60d58921f64646c5cbc 537 main/binary-armhf/Packages
  17d3679e045a215c875f2ae317ad0df2bfd0808590112fd4362ff76f35cfda6bb5bf766fa40d623cda8947fe58f67d631628d9920cd546b41f89ef1e57b50dad 448 main/binary-armhf/Packages.xz
- cb252787fdfc6cdbd0e38892dda46d90b1d6c5921af6fb8c75529b0f9775a363b8e6af74429603ead353fd021f0a742dd71819a12576b4c0cd19c0dc8e25ae7a 4843 u3/binary-armhf/Packages
- 9580c93eff5b652b8649201b5cf7be0a9d35aa0c1e6fac72d3d628c72b7dca07134a35cf0ef9e98d66da7734d574f2651906d3cfa17720f73b683ae3d3d7bea3 1528 u3/binary-armhf/Packages.xz
+ e341f1c4f9a85dd4662ac703e186f27c4b70c195e0619928ab4f095798f1f039d7bb365f0e1b77e1e401df2b6b5e496c6a84d3aa97e8cd765484b91300980151 2446 u3/binary-armhf/Packages
+ 00e708113ccd0358b90c89b27508e56e2de400e3c40225c3d2fc555a72e852d26971119c889875a73742728f85c35e85070c0b23449c3a73af1a340639b53c9a 1008 u3/binary-armhf/Packages.xz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCauUJ3wAKCRDYW8CQSXzo
-ubmeAQCcBODKjjF3maDbAktsD6iw5wklp+8w94FSw97pHSDDGQEA0GU9v1rcz00S
-mCvuvn5XTHTA/Ab/J08S39CnDdQ2rwY=
-=aNMF
+iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCauUKOgAKCRDYW8CQSXzo
+ubB7AQCgELv8CH4Wi2CCxYSiQDuJf9t+kmgV7N5pqQC/HuFCQQEAocuHdim36mCC
+DTrPLiat1UilJY+owu5l7hdpHHgIIAQ=
+=omUB
 -----END PGP SIGNATURE-----

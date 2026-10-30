@@ -1,31 +1,3 @@
-Package: linux-image-6.12.114-odroidu3-v1
-Version: 6.12.114-1
-Architecture: armhf
-Maintainer: the-ab <the-ab@users.noreply.github.com>
-Section: kernel
-Priority: optional
-Homepage: https://github.com/the-ab/ODROID
-Depends: odroid-u3-kernel-tools (>= 1.0.1), kmod
-Description: Linux 6.12.114-odroidu3-v1 for ODROID-U3
-Filename: pool/u3/linux-image-6.12.114-odroidu3-v1_6.12.114-1_armhf.deb
-Size: 21333708
-SHA256: 0f13f96af3c3db1cc6d064620ea9b571070c4d75e4d7e01f51b0ed3397134cea
-SHA512: 739b68a1eea068b34fb3e0c070a14e5e443b6a7f7792cf103ecd536370a318ddc9956bd4d5303377c84ece79376af0a58b1e57f12338f57f27e9afcdfecca2e9
-
-Package: linux-image-7.3.1-odroidu3-v1
-Version: 7.3.1-1
-Architecture: armhf
-Maintainer: the-ab <the-ab@users.noreply.github.com>
-Section: kernel
-Priority: optional
-Homepage: https://github.com/the-ab/ODROID
-Depends: odroid-u3-kernel-tools (>= 1.0.1), kmod
-Description: Linux 7.3.1-odroidu3-v1 for ODROID-U3
-Filename: pool/u3/linux-image-7.3.1-odroidu3-v1_7.3.1-1_armhf.deb
-Size: 23148280
-SHA256: 0940ceb6c84a84fbfd4422bd8ec0ce3644aa563ad0b0e53c657123d256db4510
-SHA512: 927d94c0991e588b1a14895c6766161e849087cbbe07d80f3018ece554b2074494d529acc7d21593b35abb98494c51958644c4c9eada7c4a1d0401a305fa4308
-
 Package: linux-image-7.3.1-odroidu3-v3
 Version: 7.3.1-3
 Architecture: armhf
@@ -40,34 +12,6 @@ Filename: pool/u3/linux-image-7.3.1-odroidu3-v3_7.3.1-3_armhf.deb
 Size: 29592536
 SHA256: a2e309698cc5095f4b955f89ba0cf03910a77052ed8409067896411d75a5667b
 SHA512: 6d6712fa1eb4f1f203dc231c89726799280f145516222effeb87b8311ce2435aa7773afa1ea379f7c5709d8bf7dfb746c49ac3a6daca69984a519066d72bb8a2
-
-Package: linux-image-odroid-u3
-Version: 6.12.114-1
-Architecture: armhf
-Maintainer: the-ab <the-ab@users.noreply.github.com>
-Section: kernel
-Priority: optional
-Homepage: https://github.com/the-ab/ODROID
-Depends: linux-image-6.12.114-odroidu3-v1 (= 6.12.114-1)
-Description: Latest released board kernel for ODROID-U3
-Filename: pool/u3/linux-image-odroid-u3_6.12.114-1_armhf.deb
-Size: 1112
-SHA256: eac5264824e95b9e9bb0e244419f12da5552bbc28bc30381d07950d671b2229e
-SHA512: eb544996763f11fb293305ca946935d8423a0e85e5fc495ac837c6e4f5fd43c18bd4483e88165d4450bdfe110be298d2603b006129ad8f4e51421d3014de5933
-
-Package: linux-image-odroid-u3
-Version: 7.3.1-1
-Architecture: armhf
-Maintainer: the-ab <the-ab@users.noreply.github.com>
-Section: kernel
-Priority: optional
-Homepage: https://github.com/the-ab/ODROID
-Depends: linux-image-7.3.1-odroidu3-v1 (= 7.3.1-1)
-Description: Latest released board kernel for ODROID-U3
-Filename: pool/u3/linux-image-odroid-u3_7.3.1-1_armhf.deb
-Size: 1112
-SHA256: 839c74d034b69f2527590e68cebf2da0be43db5cf055f4b12b11ebcc8c7cb5e9
-SHA512: 8e27d062e8035fac5ff8cf89c33a77ee35da3acaef44dd93a5be27e30a6ac7ca375056fedbcac0a9f5106c8bb40c962381255d56d17aadb370a9174356949835
 
 Package: linux-image-odroid-u3
 Version: 7.3.1-3
