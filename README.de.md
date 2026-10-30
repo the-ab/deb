@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-Gemeinsame signierte APT-Quelle **https://the-ab.github.io/deb/**. Aktueller ODROID-U3-Serverkernel: **7.3.1-odroidu3-v3 / 7.3.1-3**, Werkzeuge **1.0.2**. Frühere Kernel-/Metapakete werden nach Prüfung des Ersatzes auf ausdrücklichen Nutzerwunsch aus dem aktuellen Pool entfernt; installierte Rückfälle, vollständige historische Quellen und Git-Historie bleiben erhalten. [Aktuelles Paket-/Quellmanifest](publications/u3-server-2026-10-30.json) · [Passende Quellen](https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-3).
+Gemeinsame signierte APT-Quelle **https://the-ab.github.io/deb/**. Aktueller ODROID-U3-Serverkernel: **7.3.1-odroidu3-v3 / 7.3.1-4**, Werkzeuge **1.0.2**. Frühere Kernel-/Metapakete werden nach Prüfung des Ersatzes auf ausdrücklichen Nutzerwunsch aus dem aktuellen Pool entfernt; installierte Rückfälle, vollständige historische Quellen und Git-Historie bleiben erhalten. [Aktuelles Paket-/Quellmanifest](publications/u3-server-2026-10-30.json) · [Passende Quellen](https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-4).
 
 Komponenten: `main` für gemeinsame Pakete, `u3` für ODROID-U3. Erste Architektur: `armhf`. Einrichtung und Pflegebefehle stehen vollständig in der [englischen Anleitung](README.md). Für U3 beschreibt die [Kernelupdate-Anleitung](https://github.com/the-ab/ODROID/blob/codex/u3-ubuntu26-v1/docs/KERNEL-UPDATES.de.md) die Boardwerkzeuge, den erfolgreichen echten Paketwechsel/Rückfall und Wiederherstellung.
 

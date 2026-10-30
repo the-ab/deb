@@ -5,7 +5,7 @@
   "architecture": "armhf",
   "suite": "stable",
   "recommended_kernel": "7.3.1-odroidu3-v3",
-  "source_release": "https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-3",
+  "source_release": "https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-4",
   "packages": [
     {
       "package": "the-ab-archive-keyring",
@@ -31,35 +31,35 @@
     },
     {
       "package": "linux-image-7.3.1-odroidu3-v3",
-      "version": "7.3.1-3",
+      "version": "7.3.1-4",
       "architecture": "armhf",
-      "file": "linux-image-7.3.1-odroidu3-v3_7.3.1-3_armhf.deb",
-      "bytes": 29592536,
-      "sha256": "a2e309698cc5095f4b955f89ba0cf03910a77052ed8409067896411d75a5667b",
+      "file": "linux-image-7.3.1-odroidu3-v3_7.3.1-4_armhf.deb",
+      "bytes": 29598300,
+      "sha256": "562d1732c9761cf46710c7cf6d61ab5e7232fdc8e5502d69c260e9a5e820607a",
       "component": "u3",
-      "filename": "pool/u3/linux-image-7.3.1-odroidu3-v3_7.3.1-3_armhf.deb",
-      "packaging_source_commit": "d1249c4c95a20ea6e691acab48be2185ef660bf4"
+      "filename": "pool/u3/linux-image-7.3.1-odroidu3-v3_7.3.1-4_armhf.deb",
+      "packaging_source_commit": "0927fb5710dd6de987b20acc7c94b646102702db"
     },
     {
       "package": "linux-image-odroid-u3",
-      "version": "7.3.1-3",
+      "version": "7.3.1-4",
       "architecture": "armhf",
-      "file": "linux-image-odroid-u3_7.3.1-3_armhf.deb",
+      "file": "linux-image-odroid-u3_7.3.1-4_armhf.deb",
       "bytes": 1128,
-      "sha256": "20b4c42d95f2ff530a263cd60f033ce259cdf7203e5f562bd55379868f56777e",
+      "sha256": "b1e084652a53ee8c6877ae98bf7ac783a99468f8486dc75d593c83155499d2f2",
       "component": "u3",
-      "filename": "pool/u3/linux-image-odroid-u3_7.3.1-3_armhf.deb",
-      "packaging_source_commit": "d1249c4c95a20ea6e691acab48be2185ef660bf4"
+      "filename": "pool/u3/linux-image-odroid-u3_7.3.1-4_armhf.deb",
+      "packaging_source_commit": "0927fb5710dd6de987b20acc7c94b646102702db"
     }
   ],
   "sources": [
     {
-      "file": "odroid-u3-linux-7.3.1-3-matching-sources.zip",
-      "bytes": 163113936,
-      "sha256": "68e53b0ec46aac5b58481014f41466afb01c40c150a79e9bf4ac3e5a236026cc",
+      "file": "odroid-u3-linux-7.3.1-4-matching-sources.zip",
+      "bytes": 163120549,
+      "sha256": "c5bcfcb3ae08e29ebc9a25ec22b5363c09957f5e77b36d1bcd6d5b7057c71f6c",
       "zip_crc_and_source_readback": true,
-      "recipe_commit": "d1249c4c95a20ea6e691acab48be2185ef660bf4",
-      "url": "https://github.com/the-ab/ODROID/releases/download/u3-server-kernel-7.3.1-3/odroid-u3-linux-7.3.1-3-matching-sources.zip"
+      "recipe_commit": "0927fb5710dd6de987b20acc7c94b646102702db",
+      "url": "https://github.com/the-ab/ODROID/releases/download/u3-server-kernel-7.3.1-4/odroid-u3-linux-7.3.1-4-matching-sources.zip"
     }
   ],
   "qualification": "Native signed APT v2 to v3, boot, Docker29, WireGuard, OpenVPN/TUN, nftables IPv4/IPv6, SMB3.1.1 encrypted CIFS/Samba, NFS4.2, SSHFS, AppArmor, Landlock and audit passed. Extra modules/trace/PSI and short load test recorded separately.",
@@ -69,5 +69,7 @@
     "No KVM/BTF/verified-boot/encrypted-root installer claim",
     "CVE review is dated published-data/configuration/source triage",
     "Fresh1.0.2 image first-boot acceptance remains separate"
-  ]
+  ],
+  "deb_version": "7.3.1-4",
+  "packaging_fix": "Generated modules and obsolete hash-matching boot copies are removed on purge. Native dpkg/apt-purge fixture and23 protection tests passed. Compiled kernel is byte-identical to tested7.3.1-3."
 }

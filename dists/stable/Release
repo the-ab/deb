@@ -2,7 +2,7 @@ Origin: the-ab
 Label: the-ab packages
 Suite: stable
 Codename: stable
-Date: Fri, 30 Oct 2026 21:20:58 +0000
+Date: Fri, 30 Oct 2026 21:37:27 +0000
 Architectures: armhf
 Components: main u3
 Acquire-By-Hash: yes
@@ -10,10 +10,10 @@ Description: Signed packages maintained by the-ab
 SHA256:
  ad88ff95848e137641fa90c5be017574c3288e0a3aed1a3636a27a9fd425f69e 537 main/binary-armhf/Packages
  2c36e452eab0c418fbd8c227e6566cbbf41f1f00803c3b10ba22c0c1fb2f2c31 448 main/binary-armhf/Packages.xz
- 26e16d37a1d2bb6fad63c24cf8f5afc5da93fcf6e272c2a0814b9834bda0fd40 2446 u3/binary-armhf/Packages
- f2d4207b441ff786389216fece6e0baaac1e5681cebb494415fa6d89f0e57b02 1008 u3/binary-armhf/Packages.xz
+ 5bdcf994034d4b71dbcb6743a37578adc3992ffdfe04c07537f41365f903c8c1 2446 u3/binary-armhf/Packages
+ a55d88e4d4fb4f81adbe08489ef5ad38990a55353add49e3e0b619460b6853e2 1016 u3/binary-armhf/Packages.xz
 SHA512:
  32717a222b81c24c88372e1026984b818d3b5975f4f40cff617fa297accb6a48be0708a0097218ddffb308ada7ad599a6a4bc21b882ba60d58921f64646c5cbc 537 main/binary-armhf/Packages
  17d3679e045a215c875f2ae317ad0df2bfd0808590112fd4362ff76f35cfda6bb5bf766fa40d623cda8947fe58f67d631628d9920cd546b41f89ef1e57b50dad 448 main/binary-armhf/Packages.xz
- e341f1c4f9a85dd4662ac703e186f27c4b70c195e0619928ab4f095798f1f039d7bb365f0e1b77e1e401df2b6b5e496c6a84d3aa97e8cd765484b91300980151 2446 u3/binary-armhf/Packages
- 00e708113ccd0358b90c89b27508e56e2de400e3c40225c3d2fc555a72e852d26971119c889875a73742728f85c35e85070c0b23449c3a73af1a340639b53c9a 1008 u3/binary-armhf/Packages.xz
+ 3cf1a2026c219dd182d3887ae13c1072b1b9954ed6850b84e3c31a405531c8c023d8fbc1ec2cc891fa200a9dc2619deab0dcf5750350056e325f803ec5b3a1a0 2446 u3/binary-armhf/Packages
+ bfc10acd1da75cf97d4c88ff5f606f3a9e6e26d04fb069897e5d57b5934ea28a89124f4e1010d0ab231f06a18f387b9f15871d816b2bd3d2ccaf15425c8819c6 1016 u3/binary-armhf/Packages.xz

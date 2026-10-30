@@ -1,0 +1,59 @@
+Package: linux-image-7.3.1-odroidu3-v3
+Version: 7.3.1-4
+Architecture: armhf
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: odroid-u3-kernel-tools (>= 1.0.2), kmod
+Description: Linux 7.3.1-odroidu3-v3 for ODROID-U3
+Installed-Size: 52824
+Filename: pool/u3/linux-image-7.3.1-odroidu3-v3_7.3.1-4_armhf.deb
+Size: 29598300
+SHA256: 562d1732c9761cf46710c7cf6d61ab5e7232fdc8e5502d69c260e9a5e820607a
+SHA512: 00ff9230a2d37c02a2cc0136a97bb663d2e37170b798c9aca2c56ed7cbf220583cfbaebbc3b9992a520095299bf0fbdccd9c354d648d9740adea023bb4dc4575
+
+Package: linux-image-odroid-u3
+Version: 7.3.1-4
+Architecture: armhf
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: linux-image-7.3.1-odroidu3-v3 (= 7.3.1-4)
+Description: Latest released board kernel for ODROID-U3
+Installed-Size: 1
+Filename: pool/u3/linux-image-odroid-u3_7.3.1-4_armhf.deb
+Size: 1128
+SHA256: b1e084652a53ee8c6877ae98bf7ac783a99468f8486dc75d593c83155499d2f2
+SHA512: 1d8358ce94a3c9a071f61e12e2a76e228b8cd6aab89399112236c7aba1634f9e9e222692072dcaff44996669f2fec9b713f06205c088d79f0afdee8d36c1b210
+
+Package: odroid-u3-kernel-tools
+Version: 1.0.1
+Architecture: all
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: python3, kmod, util-linux, the-ab-archive-keyring
+Description: Kernel activation and recovery tools for ODROID-U3
+Filename: pool/u3/odroid-u3-kernel-tools_1.0.1_all.deb
+Size: 5764
+SHA256: 291093fa20022091eca26b751fa7518077486eb1bb1a49e310e64fbca51ee0d3
+SHA512: 95467b568e1c1aec79ce7b8eed35355e49e551f8bf19f6d2c1ceef5aa38324f7efd2de285abfc3f36241b07d43f11c1f188f486b8f7642d3c44579297248cec0
+
+Package: odroid-u3-kernel-tools
+Version: 1.0.2
+Architecture: all
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: python3 (>= 3.11), kmod, util-linux, the-ab-archive-keyring
+Description: Kernel activation and recovery tools for ODROID-U3
+Installed-Size: 13
+Filename: pool/u3/odroid-u3-kernel-tools_1.0.2_all.deb
+Size: 5832
+SHA256: b9f4297352657beb0757ed63f7d443e304a5dbd7a7c3240f81dda70f569de042
+SHA512: 73630eefa5042009fc6d2dd3ce6b4705f574eec48055b01e96258f22b167d301cd586ebed586f2db18fd107757cf53bc974d8b4b0aac66783f39117d5fa29aeb
+

@@ -2,7 +2,7 @@
 
 [Deutsch](README.de.md)
 
-Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v3 / 7.3.1-3**, tools **1.0.2**. Earlier kernel/meta packages are retired from the current pool by explicit owner request after replacement testing; installed fallbacks, complete historical sources and Git history remain. [Current package/source manifest](publications/u3-server-2026-10-30.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-3).
+Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v3 / 7.3.1-4**, tools **1.0.2**. Earlier kernel/meta packages are retired from the current pool by explicit owner request after replacement testing; installed fallbacks, complete historical sources and Git history remain. [Current package/source manifest](publications/u3-server-2026-10-30.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-4).
 
 Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/codex/u3-ubuntu26-v1/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
 
