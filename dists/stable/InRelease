@@ -5,25 +5,25 @@ Origin: the-ab
 Label: the-ab packages
 Suite: stable
 Codename: stable
-Date: Fri, 30 Oct 2026 17:31:37 +0000
+Date: Fri, 30 Oct 2026 19:38:43 +0000
 Architectures: armhf
 Components: main u3
 Acquire-By-Hash: yes
 Description: Signed packages maintained by the-ab
 SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-armhf/Packages
- 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275 32 main/binary-armhf/Packages.xz
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 u3/binary-armhf/Packages
- 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275 32 u3/binary-armhf/Packages.xz
+ ad88ff95848e137641fa90c5be017574c3288e0a3aed1a3636a27a9fd425f69e 537 main/binary-armhf/Packages
+ 2c36e452eab0c418fbd8c227e6566cbbf41f1f00803c3b10ba22c0c1fb2f2c31 448 main/binary-armhf/Packages.xz
+ 77344243405562eec4d86f0d9f1882037a4921fd42873243d0ba388892c28a51 2993 u3/binary-armhf/Packages
+ e2ea961dee9fd1c00ca382908ef2b89d2b8fa9042846650e685c6002a5270f29 1128 u3/binary-armhf/Packages.xz
 SHA512:
- cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e 0 main/binary-armhf/Packages
- 034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527 32 main/binary-armhf/Packages.xz
- cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e 0 u3/binary-armhf/Packages
- 034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527 32 u3/binary-armhf/Packages.xz
+ 32717a222b81c24c88372e1026984b818d3b5975f4f40cff617fa297accb6a48be0708a0097218ddffb308ada7ad599a6a4bc21b882ba60d58921f64646c5cbc 537 main/binary-armhf/Packages
+ 17d3679e045a215c875f2ae317ad0df2bfd0808590112fd4362ff76f35cfda6bb5bf766fa40d623cda8947fe58f67d631628d9920cd546b41f89ef1e57b50dad 448 main/binary-armhf/Packages.xz
+ 5f26fb8ddb727af2035f501e70e98aad74990e0dba1adc5317e82e0c2284e640ff1b837bbf22284d996b86e2ab7de0ba7d91a17f6d105029b2b9553f14cc8525 2993 u3/binary-armhf/Packages
+ bbd23e22b0e21248f81c91da199e19070f941a9f7091a42e85a3a13e49dc20c4d99be258568c93a30b96150d6195e31c04aa0406fdbf6451558da7d5a0dcef20 1128 u3/binary-armhf/Packages.xz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCauTUeQAKCRDYW8CQSXzo
-uZK9AQDVvnC23Su65dZxm+GBNMKRZbkdqnbEBTF4eN0TAZGCzwEAmg23+J+sYXm4
-Ik9QLqG0ikJFGoS49+Y7qLwD9YyOrgA=
-=Vvh4
+iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCauTyQwAKCRDYW8CQSXzo
+uWKhAP4sE2+u3YES1cfyVSAD4vDBNcN5DjqA6ZkVk+ADsmTUCgEAuRqiShUA0zsL
+pxJEhvTkKGbZA+JEfh7PWCMkahq0kgg=
+=HJso
 -----END PGP SIGNATURE-----

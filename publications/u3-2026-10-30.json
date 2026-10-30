@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "board": "ODROID-U3",
+  "architecture": "armhf",
+  "suite": "stable",
+  "recommended_kernel": "7.3.1-odroidu3-v1",
+  "fallback_kernel": "6.12.114-odroidu3-v1",
+  "source_release": "https://github.com/the-ab/ODROID/releases/tag/u3-kernels-2026.10.30",
+  "packages": [
+    {
+      "package": "the-ab-archive-keyring",
+      "version": "2026.10.30",
+      "architecture": "all",
+      "file": "the-ab-archive-keyring_2026.10.30_all.deb",
+      "bytes": 1360,
+      "sha256": "80f0a825d9997fd241268bf3b0ff2517f7d89e2680349fc0e38fbb104dedbb00",
+      "component": "main",
+      "filename": "pool/main/the-ab-archive-keyring_2026.10.30_all.deb",
+      "packaging_source_commit": "ac0976103bf07d899b2ae30ee90332864286535d"
+    },
+    {
+      "package": "odroid-u3-kernel-tools",
+      "version": "1.0.1",
+      "architecture": "all",
+      "file": "odroid-u3-kernel-tools_1.0.1_all.deb",
+      "bytes": 5764,
+      "sha256": "291093fa20022091eca26b751fa7518077486eb1bb1a49e310e64fbca51ee0d3",
+      "component": "u3",
+      "filename": "pool/u3/odroid-u3-kernel-tools_1.0.1_all.deb",
+      "packaging_source_commit": "ac0976103bf07d899b2ae30ee90332864286535d"
+    },
+    {
+      "package": "linux-image-6.12.114-odroidu3-v1",
+      "version": "6.12.114-1",
+      "architecture": "armhf",
+      "file": "linux-image-6.12.114-odroidu3-v1_6.12.114-1_armhf.deb",
+      "bytes": 21333708,
+      "sha256": "0f13f96af3c3db1cc6d064620ea9b571070c4d75e4d7e01f51b0ed3397134cea",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-6.12.114-odroidu3-v1_6.12.114-1_armhf.deb",
+      "packaging_source_commit": "ac0976103bf07d899b2ae30ee90332864286535d"
+    },
+    {
+      "package": "linux-image-odroid-u3",
+      "version": "6.12.114-1",
+      "architecture": "armhf",
+      "file": "linux-image-odroid-u3_6.12.114-1_armhf.deb",
+      "bytes": 1112,
+      "sha256": "eac5264824e95b9e9bb0e244419f12da5552bbc28bc30381d07950d671b2229e",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-odroid-u3_6.12.114-1_armhf.deb",
+      "packaging_source_commit": "ac0976103bf07d899b2ae30ee90332864286535d"
+    },
+    {
+      "package": "linux-image-7.3.1-odroidu3-v1",
+      "version": "7.3.1-1",
+      "architecture": "armhf",
+      "file": "linux-image-7.3.1-odroidu3-v1_7.3.1-1_armhf.deb",
+      "bytes": 23148280,
+      "sha256": "0940ceb6c84a84fbfd4422bd8ec0ce3644aa563ad0b0e53c657123d256db4510",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-7.3.1-odroidu3-v1_7.3.1-1_armhf.deb",
+      "packaging_source_commit": "86ef17987e3f4094ceb03309ae4b640493909731"
+    },
+    {
+      "package": "linux-image-odroid-u3",
+      "version": "7.3.1-1",
+      "architecture": "armhf",
+      "file": "linux-image-odroid-u3_7.3.1-1_armhf.deb",
+      "bytes": 1112,
+      "sha256": "839c74d034b69f2527590e68cebf2da0be43db5cf055f4b12b11ebcc8c7cb5e9",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-odroid-u3_7.3.1-1_armhf.deb",
+      "packaging_source_commit": "86ef17987e3f4094ceb03309ae4b640493909731"
+    }
+  ],
+  "sources": [
+    {
+      "file": "odroid-u3-kernel-bootloader-sources-v1.0.1.zip",
+      "bytes": 195775037,
+      "sha256": "d11f1926fddf986f65f23743a01304c3ba25114423991b219c5c1cf81ea5a05a",
+      "url": "https://github.com/the-ab/ODROID/releases/download/u3-kernels-2026.10.30/odroid-u3-kernel-bootloader-sources-v1.0.1.zip"
+    },
+    {
+      "file": "odroid-u3-linux-7.3.1-1-matching-sources.zip",
+      "bytes": 162773454,
+      "sha256": "0034063c68d10c1b30d5f18dd144cce56aed35ac80882117cb5a966f6dc281f4",
+      "url": "https://github.com/the-ab/ODROID/releases/download/u3-kernels-2026.10.30/odroid-u3-linux-7.3.1-1-matching-sources.zip"
+    }
+  ],
+  "qualification": "Native signed APT 6.12.114 to 7.3.1, rollback to 6.12.114 and return to 7.3.1 passed. Short CPU/RAM/eMMC and user-confirmed stereo headphone tests passed.",
+  "limits": [
+    "Existing image ZIPs remain unchanged with Linux6.12.114",
+    "Linux7 capture/I2S RX-DMA warning, full rendering/peripheral and long-term validation remain open",
+    "CVE review is dated published Linux CNA/config/source triage, not a guarantee against future or undisclosed defects",
+    "No boot0 firmware or image binaries are published here"
+  ]
+}

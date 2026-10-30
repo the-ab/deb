@@ -1,0 +1,13 @@
+Package: the-ab-archive-keyring
+Version: 2026.10.30
+Architecture: all
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Description: Public archive key for the-ab packages
+Filename: pool/main/the-ab-archive-keyring_2026.10.30_all.deb
+Size: 1360
+SHA256: 80f0a825d9997fd241268bf3b0ff2517f7d89e2680349fc0e38fbb104dedbb00
+SHA512: 355e7fc168c24d262a6c46e6838bff13b216ca338134edc8f876f0851a2ca8d866e5dbefcfdb252d56ad27da32d718ec667838eae3b0a6171d8931f7794fad8f
+

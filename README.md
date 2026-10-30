@@ -2,9 +2,9 @@
 
 [Deutsch](README.de.md)
 
-Shared signed APT repository at **https://the-ab.github.io/deb/** for ODROID and future the-ab projects. GitHub Pages serves `main` at `/`; `.nojekyll` preserves the repository layout. The initial published indices are empty. Product acceptance and approval are required before adding binary packages.
+Shared signed APT repository at **https://the-ab.github.io/deb/** for ODROID and future the-ab projects. GitHub Pages serves `main` at `/`; `.nojekyll` preserves the repository layout. The tested ODROID-U3 kernels **7.3.1-1** and **6.12.114-1** are published. The tracking metapackage selects 7.3.1; the 6.12 kernel remains available for fallback. [Package/source manifest](publications/u3-2026-10-30.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-kernels-2026.10.30).
 
-Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/codex/u3-ubuntu26-v1/docs/KERNEL-UPDATES.md) describes the board tools and pending native update acceptance.
+Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/codex/u3-ubuntu26-v1/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
 
 ## Client configuration
 
@@ -28,7 +28,7 @@ Architectures: armhf
 Signed-By: /usr/share/keyrings/the-ab-archive-keyring.gpg
 ```
 
-Run `sudo apt update`. No `apt-key`, `trusted=yes` or unauthenticated mode is required. An empty signed repository is valid and offers no updates yet. Select only the component and architecture appropriate to each future project.
+Run `sudo apt update`. No `apt-key`, `trusted=yes` or unauthenticated mode is required. On Ubuntu 26.04 armhf ODROID-U3, install or update with `sudo apt install linux-image-odroid-u3`, inspect `odroid-kernel status`, and reboot deliberately. The versioned 6.12 package is `linux-image-6.12.114-odroidu3-v1`. Packages do not update boot0 or reboot automatically. The board tools require Python 3.11 or newer; the supported/tested distribution is Ubuntu 26.04 armhf. Select only the component and architecture appropriate to each future project.
 
 ## Maintainer workflow
 
