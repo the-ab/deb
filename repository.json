@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "suite": "stable",
+  "components": {
+    "main": [
+      "armhf"
+    ],
+    "u3": [
+      "armhf"
+    ]
+  },
+  "public_url": "https://the-ab.github.io/deb/",
+  "publication": "Initial signed infrastructure; kernel binary releases require their product acceptance/approval."
+}
