@@ -10,5 +10,5 @@
     ]
   },
   "public_url": "https://the-ab.github.io/deb/",
-  "publication": "Tested U3 kernels7.3.1-1 and6.12.114-1 published with matching sources after explicit approval; other projects require their own acceptance/approval."
+  "publication": "Tested ODROID-U3 kernel 7.3.1-odroidu3-v32 (package 7.3.1-33) and tools 1.0.3 published with matching sources after explicit approval; previous 7.3.1-4 packages remain available for rollback. Other projects require their own acceptance and approval."
 }

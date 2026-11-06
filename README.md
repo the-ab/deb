@@ -2,9 +2,9 @@
 
 [Deutsch](README.de.md)
 
-Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v3 / 7.3.1-4**, tools **1.0.2**. Earlier kernel/meta packages are retired from the current pool by explicit owner request after replacement testing; installed fallbacks, complete historical sources and Git history remain. [Current package/source manifest](publications/u3-server-2026-10-30.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-server-kernel-7.3.1-4).
+Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v32 / 7.3.1-33**, tools **1.0.3**. The previous **7.3.1-odroidu3-v3 / 7.3.1-4** kernel, metapackage and tools remain in the pool for rollback. [Current package/source manifest](publications/u3-server-2026-11-06.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-kernel-7.3.1-33).
 
-Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/codex/u3-ubuntu26-v1/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
+Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/main/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
 
 ## Client configuration
 
@@ -28,7 +28,7 @@ Architectures: armhf
 Signed-By: /usr/share/keyrings/the-ab-archive-keyring.gpg
 ```
 
-Run `sudo apt update`. No `apt-key`, `trusted=yes` or unauthenticated mode is required. On Ubuntu 26.04 armhf ODROID-U3, install or update with `sudo apt install linux-image-odroid-u3`, inspect `odroid-kernel status`, and reboot deliberately. Keep previously installed fallback kernels locally; retired versions are not promised as current downloads. Packages do not update boot0 or reboot automatically. The board tools require Python 3.11 or newer; the supported/tested distribution is Ubuntu 26.04 armhf. Select only the component and architecture appropriate to each future project.
+Run `sudo apt update`. No `apt-key`, `trusted=yes` or unauthenticated mode is required. On Ubuntu 26.04 armhf ODROID-U3, install or update with `sudo apt install linux-image-odroid-u3`, inspect `odroid-kernel status`, and reboot deliberately. Keep previously installed fallback kernels locally; the current pool also retains the previous 7.3.1-4 release. Packages do not update boot0 or reboot automatically. The board tools require Python 3.11 or newer; the supported/tested distribution is Ubuntu 26.04 armhf. Select only the component and architecture appropriate to each future project.
 
 ## Maintainer workflow
 
@@ -42,4 +42,4 @@ Private signing material is managed separately and is never committed. Keep a se
 
 Official references: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits), [APT source format](https://manpages.debian.org/unstable/apt/sources.list.5.en.html).
 
-Tools1.0.2 install versioned files directly under `/boot`. Never overwrite an existing package version with different bytes. Retirement of obsolete versions requires explicit owner scope and a verified replacement; it never removes installed kernels on clients.
+Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an existing package version with different bytes. Retirement of obsolete versions requires explicit owner scope and a verified replacement; it never removes installed kernels on clients.

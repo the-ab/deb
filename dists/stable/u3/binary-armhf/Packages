@@ -1,3 +1,18 @@
+Package: linux-image-7.3.1-odroidu3-v32
+Version: 7.3.1-33
+Architecture: armhf
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: odroid-u3-kernel-tools (>= 1.0.3), kmod
+Description: Linux 7.3.1-odroidu3-v32 for ODROID-U3
+Installed-Size: 52838
+Filename: pool/u3/linux-image-7.3.1-odroidu3-v32_7.3.1-33_armhf.deb
+Size: 29607820
+SHA256: 3dbf16b7a207f351266b9cf0fd12dbee41c74cd20851adb29bfdbb79de5d4739
+SHA512: b17d807dc5557fcb58582c51d22df83b9b49fc32570b856b08bcbc0c3df977680be7c64bddab0d35a2b1f5f528d0c52d5d0e9e915b36beb052b1ca52210f18b8
+
 Package: linux-image-7.3.1-odroidu3-v3
 Version: 7.3.1-4
 Architecture: armhf
@@ -12,6 +27,21 @@ Filename: pool/u3/linux-image-7.3.1-odroidu3-v3_7.3.1-4_armhf.deb
 Size: 29598300
 SHA256: 562d1732c9761cf46710c7cf6d61ab5e7232fdc8e5502d69c260e9a5e820607a
 SHA512: 00ff9230a2d37c02a2cc0136a97bb663d2e37170b798c9aca2c56ed7cbf220583cfbaebbc3b9992a520095299bf0fbdccd9c354d648d9740adea023bb4dc4575
+
+Package: linux-image-odroid-u3
+Version: 7.3.1-33
+Architecture: armhf
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: linux-image-7.3.1-odroidu3-v32 (= 7.3.1-33)
+Description: Latest released board kernel for ODROID-U3
+Installed-Size: 1
+Filename: pool/u3/linux-image-odroid-u3_7.3.1-33_armhf.deb
+Size: 1128
+SHA256: 5fd61e57cbd5fa768ad27d0f5cc7450f675d24ead1dbd81caabd8d40c5768d79
+SHA512: 6dca3e5ee441ec466cef65f62ae1d9fbdd384e8d6e48fcc59429c91d71acdb3c52f9d672f1cbb3f7fe2a91c870ff7e72bc7fa6574b93f9aa93eca04bedfe45da
 
 Package: linux-image-odroid-u3
 Version: 7.3.1-4
@@ -56,4 +86,19 @@ Filename: pool/u3/odroid-u3-kernel-tools_1.0.2_all.deb
 Size: 5832
 SHA256: b9f4297352657beb0757ed63f7d443e304a5dbd7a7c3240f81dda70f569de042
 SHA512: 73630eefa5042009fc6d2dd3ce6b4705f574eec48055b01e96258f22b167d301cd586ebed586f2db18fd107757cf53bc974d8b4b0aac66783f39117d5fa29aeb
+
+Package: odroid-u3-kernel-tools
+Version: 1.0.3
+Architecture: all
+Maintainer: the-ab <the-ab@users.noreply.github.com>
+Section: kernel
+Priority: optional
+Homepage: https://github.com/the-ab/ODROID
+Depends: python3 (>= 3.11), kmod, util-linux, the-ab-archive-keyring
+Description: Kernel activation and recovery tools for ODROID-U3
+Installed-Size: 14
+Filename: pool/u3/odroid-u3-kernel-tools_1.0.3_all.deb
+Size: 5972
+SHA256: 43ad40dc4e35e55616f6681299c52c60d4773649f564166d71bbfdc5b6ad9355
+SHA512: af13eab279f42ecf10fbf7ae404619409a50c48f3f3c5f3880b6ca0b29dc49e58accbfb7d84452e9edb21b7cd453bd00f84a24d98f53d8c76a785ded0e895af0
 
