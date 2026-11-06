@@ -71,5 +71,7 @@
     "Fresh1.0.2 image first-boot acceptance remains separate"
   ],
   "deb_version": "7.3.1-4",
-  "packaging_fix": "Generated modules and obsolete hash-matching boot copies are removed on purge. Native dpkg/apt-purge fixture and23 protection tests passed. Compiled kernel is byte-identical to tested7.3.1-3."
+  "packaging_fix": "Generated modules and obsolete hash-matching boot copies are removed on purge. Native dpkg/apt-purge fixture and23 protection tests passed. Compiled kernel is byte-identical to tested7.3.1-3.",
+  "historical": true,
+  "superseded_by": "u3-server-2026-11-06.json"
 }

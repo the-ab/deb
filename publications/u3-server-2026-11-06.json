@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "date": "2026-11-06",
+  "board": "ODROID-U3",
+  "architecture": "armhf",
+  "suite": "stable",
+  "recommended_kernel": "7.3.1-odroidu3-v32",
+  "deb_version": "7.3.1-33",
+  "kernel_tools_version": "1.0.3",
+  "source_release": "https://github.com/the-ab/ODROID/releases/tag/u3-kernel-7.3.1-33",
+  "packaging_source_commit": "b8ce206a44451aa64452add634a3e6376b60d6be",
+  "cleaned_source_commit": "9f44a9723fb457f8ae332d00db62c06de97152b7",
+  "packages": [
+    {
+      "package": "the-ab-archive-keyring",
+      "version": "2026.10.30",
+      "architecture": "all",
+      "file": "the-ab-archive-keyring_2026.10.30_all.deb",
+      "bytes": 1360,
+      "sha256": "80f0a825d9997fd241268bf3b0ff2517f7d89e2680349fc0e38fbb104dedbb00",
+      "component": "main",
+      "filename": "pool/main/the-ab-archive-keyring_2026.10.30_all.deb",
+      "packaging_source_commit": "ac0976103bf07d899b2ae30ee90332864286535d"
+    },
+    {
+      "package": "odroid-u3-kernel-tools",
+      "version": "1.0.3",
+      "architecture": "all",
+      "file": "odroid-u3-kernel-tools_1.0.3_all.deb",
+      "bytes": 5972,
+      "sha256": "43ad40dc4e35e55616f6681299c52c60d4773649f564166d71bbfdc5b6ad9355",
+      "component": "u3",
+      "filename": "pool/u3/odroid-u3-kernel-tools_1.0.3_all.deb",
+      "packaging_source_commit": "b8ce206a44451aa64452add634a3e6376b60d6be"
+    },
+    {
+      "package": "linux-image-7.3.1-odroidu3-v32",
+      "version": "7.3.1-33",
+      "architecture": "armhf",
+      "file": "linux-image-7.3.1-odroidu3-v32_7.3.1-33_armhf.deb",
+      "bytes": 29607820,
+      "sha256": "3dbf16b7a207f351266b9cf0fd12dbee41c74cd20851adb29bfdbb79de5d4739",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-7.3.1-odroidu3-v32_7.3.1-33_armhf.deb",
+      "packaging_source_commit": "b8ce206a44451aa64452add634a3e6376b60d6be"
+    },
+    {
+      "package": "linux-image-odroid-u3",
+      "version": "7.3.1-33",
+      "architecture": "armhf",
+      "file": "linux-image-odroid-u3_7.3.1-33_armhf.deb",
+      "bytes": 1128,
+      "sha256": "5fd61e57cbd5fa768ad27d0f5cc7450f675d24ead1dbd81caabd8d40c5768d79",
+      "component": "u3",
+      "filename": "pool/u3/linux-image-odroid-u3_7.3.1-33_armhf.deb",
+      "packaging_source_commit": "b8ce206a44451aa64452add634a3e6376b60d6be"
+    }
+  ],
+  "archive_keyring_reused": {
+    "version": "2026.10.30",
+    "unchanged_published_bytes": true
+  },
+  "sources": [
+    {
+      "file": "odroid-u3-v1.0.3-corresponding-sources.zip",
+      "bytes": 209336004,
+      "sha256": "574e4d5878761278ab767ac889adbf15cd0806be68800534d41ec75ff597d43f",
+      "zip_crc_and_source_readback": true,
+      "recipe_commit": "9f44a9723fb457f8ae332d00db62c06de97152b7",
+      "packaging_source_commit": "b8ce206a44451aa64452add634a3e6376b60d6be",
+      "url": "https://github.com/the-ab/ODROID/releases/download/u3-kernel-7.3.1-33/odroid-u3-v1.0.3-corresponding-sources.zip"
+    }
+  ],
+  "source_equivalence": {
+    "original_commit": "b8ce206a44451aa64452add634a3e6376b60d6be",
+    "cleaned_commit": "9f44a9723fb457f8ae332d00db62c06de97152b7",
+    "byte_identical_build_inputs": {
+      "boards/u3/kernel.config": {
+        "bytes": 203512,
+        "sha256": "b5f53b81236efcc43c4e030f24fbcddca34377decfda2dc7f3cee7a5c238e57d"
+      },
+      "boards/u3/patches/platform.patch": {
+        "bytes": 56220,
+        "sha256": "afab7147a7f772b5b3fbaba9bb9c709ba6eda1bfe82743acadc8964aade15ad2"
+      },
+      "boards/u3/support/kernel-package-postrm.py": {
+        "bytes": 6555,
+        "sha256": "98ce7ba7a7d37c4b8bab7099a9698df58ba2e05f8c1c3c28334120e4b7f4614e"
+      },
+      "boards/u3/support/odroid-kernel": {
+        "bytes": 12937,
+        "sha256": "883c68ca1d1d03520131a4324c3417cadf7e8081e663fac72bc21f2b2d11c855"
+      },
+      "scripts/build-kernel-debs.py": {
+        "bytes": 9105,
+        "sha256": "3df26a31f805872e384a646d69497950426ec7a781f086b3dd066ab5a22d50ca"
+      },
+      "scripts/build-kernel.sh": {
+        "bytes": 2148,
+        "sha256": "83a95e03fae2bfebe3d1990b17f1a5bb69e0923a83cbb8368085034d159d71a2"
+      }
+    },
+    "relocated_security_patch_files": 9,
+    "relocated_security_patch_bytes_unchanged": true,
+    "security_manifest_metadata_correction": {
+      "patch": "05-CVE-2026-99255-7.3.1-backport.patch",
+      "field": "bytes",
+      "original_value": 4841,
+      "corrected_value": 4347,
+      "patch_SHA256_unchanged": "054289d26cf82f965c62e4b355bec3280cbc8c206f8d75a4cfa8ccf2d92bb67a",
+      "all_other_security_manifest_content_unchanged": true
+    },
+    "sources_lock_change": "security_fixes_manifest path relocated; all source URLs, hashes and build parameters unchanged",
+    "board_json_change": "binary_release_status documentation only; all build parameters unchanged",
+    "tested_package_bytes_unchanged": true
+  },
+  "qualification": "Native kernel qualification passed 10 warm boots, 5 cold starts and all 11 functional cases. The exact final package payloads were verified against the tested kernel and modules. A fresh Minimal 1.0.3 eMMC installation passed native basic checks; the owner also reported a successful warm boot.",
+  "retained_packages": [
+    {
+      "package": "linux-image-7.3.1-odroidu3-v3",
+      "version": "7.3.1-4"
+    },
+    {
+      "package": "linux-image-odroid-u3",
+      "version": "7.3.1-4"
+    },
+    {
+      "package": "odroid-u3-kernel-tools",
+      "version": "1.0.2"
+    },
+    {
+      "package": "odroid-u3-kernel-tools",
+      "version": "1.0.1"
+    }
+  ],
+  "vendor_boot_blobs_included": false,
+  "limits": [
+    "Kernel packages do not update boot0 firmware or reboot automatically.",
+    "Fresh Minimized 1.0.3 and SD image boot acceptance remain unverified.",
+    "Current physical graphics and microphone acceptance remain unverified.",
+    "Complete 1.0.3 images remain draft assets pending documented exact BL1/BL2/TrustZone redistribution/source coverage."
+  ]
+}
