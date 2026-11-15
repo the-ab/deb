@@ -14,5 +14,5 @@
     ]
   },
   "public_url": "https://the-ab.github.io/deb/",
-  "publication": "Existing ODROID publications retained. NAS dependency mirror is prepared on a feature branch; publish only after source/license, signature and client checks."
+  "publication": "Live signed main/u3/nas-manager APT repository. NAS dependency mirror published2026-11-15; original ODROID package bytes and historical versions preserved. Per-publication package/source/check manifests record exact evidence."
 }

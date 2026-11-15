@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "Signed complete site verified; public deployment pending",
+  "status": "Published; signed public APT and exact original package downloads verified",
   "date": "2026-11-15",
   "component": "nas-manager",
   "architectures": [
@@ -231,10 +231,18 @@
   "validation": {
     "asset_admission": "six focused tests passed on b42809e50dbd575dbbebd067d2c918200ee6ea1c; builder root-mode correction separately verified with two byte-identical builds",
     "metapackages": "fixed archive root0755; two independent builds have identical size and SHA256, no maintainer scripts",
-    "signed_site_bytes": 415566665,
     "package_files": 16,
     "release_asset_files": 15,
     "original_ODROID_pool_bytes_unchanged": true,
-    "initial_dependency_versions_unchanged": true
-  }
+    "initial_dependency_versions_unchanged": true,
+    "initial_local_signed_site_bytes": 415566665,
+    "pages_deployment": "https://github.com/the-ab/deb/actions/runs/43721821947",
+    "deployed_source": "d1d56b67b4138969bd15d9767d3cdbda8db52d1e",
+    "public_signature_and_metadata": "Full HTTPS InRelease and public key matched signed source and gpgv verification passed",
+    "existing_ODROID_public_downloads": "All8 previous files/59227304bytes fully retrieved before and after; identical SHA256",
+    "real_pinned_NAS_APT_downloads": "Actual production downloader fetched and verified host2/guest6 exact packages from public signed APT in26.654s; no package install or hardware/runtime acceptance",
+    "ephemeral_runner": "Scoped public deb-pages container without host mounts, archive private key or NAS credentials; removed after verification"
+  },
+  "apt_url": "https://the-ab.github.io/deb/",
+  "release_url": "https://github.com/the-ab/deb/releases/tag/nas-manager-dependencies-2026-11-15"
 }
