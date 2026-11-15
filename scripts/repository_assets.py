@@ -139,7 +139,10 @@ def verify_site(root):
                                     str(dist / "InRelease")], stderr=subprocess.DEVNULL)
     require(plain == (dist / "Release").read_bytes(), "signed Release plaintext mismatch")
     release = plain.decode()
+    require("Components: " + " ".join(config["components"]) + "\n" in release,
+            "signed component catalogue mismatch")
     in_hashes = False
+    authenticated = set()
     for line in release.splitlines():
         if line == "SHA256:":
             in_hashes = True
@@ -153,7 +156,10 @@ def verify_site(root):
                     "Release index path")
             require(path.is_file() and not path.is_symlink() and path.stat().st_size == int(size)
                     and digest(path) == sha, "signed index content mismatch")
+            authenticated.add(rel)
     require("SHA256:\n" in release, "missing signed index hashes")
+    require(authenticated == {p.relative_to(dist).as_posix() for p in dist.glob("*/binary-*/Packages*")
+                              if p.is_file()}, "unsigned or missing package index")
     count = 0
     for index in dist.glob("*/binary-*/Packages"):
         for row in control_paragraphs(index.read_text()):

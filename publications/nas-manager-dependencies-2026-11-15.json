@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "status": "prepared; not published",
+  "date": "2026-11-15",
+  "component": "nas-manager",
+  "architectures": [
+    "amd64"
+  ],
+  "release_tag": "nas-manager-dependencies-2026-11-15",
+  "packages": [
+    {
+      "package": "i915-sriov-dkms",
+      "version": "2026.08.02",
+      "architecture": "amd64",
+      "source_package": "i915-sriov-dkms",
+      "maintainer": "bbaa <bbaa@bbaa.me>",
+      "filename": "i915-sriov-dkms_2026.08.02_amd64.deb",
+      "bytes": 2543432,
+      "sha256": "ba87393280969e2b1209a9d0e2563f3010bfd13626bcc21d4bb7058cb0804cf5",
+      "pool_path": "pool/nas-manager/i915-sriov-dkms_2026.08.02_amd64.deb"
+    },
+    {
+      "package": "linux-headers-6.17.13+deb13-amd64",
+      "version": "6.17.13-1~bpo13+1",
+      "architecture": "amd64",
+      "source_package": "linux",
+      "maintainer": "Debian Kernel Team <debian-kernel@lists.debian.org>",
+      "filename": "linux-headers-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb",
+      "bytes": 2786100,
+      "sha256": "752c712768b86b7bbfca7fd94d6b954438b956065ab728db42d71cfae244c762",
+      "pool_path": "pool/nas-manager/linux-headers-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb"
+    },
+    {
+      "package": "linux-headers-6.17.13+deb13-common",
+      "version": "6.17.13-1~bpo13+1",
+      "architecture": "all",
+      "source_package": "linux",
+      "maintainer": "Debian Kernel Team <debian-kernel@lists.debian.org>",
+      "filename": "linux-headers-6.17.13+deb13-common_6.17.13-1~bpo13+1_all.deb",
+      "bytes": 11174956,
+      "sha256": "85998501828bfb1d3d517ff0e698f8eada209b7642f989fd7e5d47e1912123ab",
+      "pool_path": "pool/nas-manager/linux-headers-6.17.13+deb13-common_6.17.13-1~bpo13+1_all.deb"
+    },
+    {
+      "package": "linux-image-6.17.13+deb13-amd64",
+      "version": "6.17.13-1~bpo13+1",
+      "architecture": "amd64",
+      "source_package": "linux-signed-amd64 (6.17.13+1~bpo13+1)",
+      "maintainer": "Debian Kernel Team <debian-kernel@lists.debian.org>",
+      "filename": "linux-image-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb",
+      "bytes": 169470672,
+      "sha256": "4c0643e5db69d9248f4139ec0c765671a2585aa53fc498dcc49b102fd5766696",
+      "pool_path": "pool/nas-manager/linux-image-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb"
+    },
+    {
+      "package": "linux-kbuild-6.17.13+deb13",
+      "version": "6.17.13-1~bpo13+1",
+      "architecture": "amd64",
+      "source_package": "linux",
+      "maintainer": "Debian Kernel Team <debian-kernel@lists.debian.org>",
+      "filename": "linux-kbuild-6.17.13+deb13_6.17.13-1~bpo13+1_amd64.deb",
+      "bytes": 1417104,
+      "sha256": "2b234e8c35bad4bbbd3d0105f4f5350642df17c484d5863cecd78878baa39c3f",
+      "pool_path": "pool/nas-manager/linux-kbuild-6.17.13+deb13_6.17.13-1~bpo13+1_amd64.deb"
+    },
+    {
+      "package": "i915-sriov-dkms",
+      "version": "2026.09.16",
+      "architecture": "amd64",
+      "source_package": "i915-sriov-dkms",
+      "maintainer": "bbaa <bbaa@bbaa.me>",
+      "filename": "i915-sriov-dkms_2026.09.16_amd64.deb",
+      "bytes": 2565654,
+      "sha256": "8c9dd46e28f67a62728686b0490d65610126f940b28c5d53ca100c060ace3aa2",
+      "pool_path": "pool/nas-manager/i915-sriov-dkms_2026.09.16_amd64.deb"
+    }
+  ],
+  "original_package_bytes_unchanged": true,
+  "new_kernel_or_driver_build": false,
+  "source_license_verification": "pending; package source identities recorded; upstream source/license mapping must be completed before publication",
+  "signature_fingerprint": "E85346CA2461E1FA45AC7C7CD85BC090497CE8B9"
+}

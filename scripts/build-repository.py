@@ -3,16 +3,19 @@
 """Build signed static APT indices, preserving existing package components and by-hash indices."""
 from pathlib import Path
 import argparse,datetime,hashlib,json,lzma,os,re,subprocess,tempfile
+from repository_assets import assets, pool_admission
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--gpg-home',type=Path,required=True);p.add_argument('--signing-key',required=True);a=p.parse_args()
 root=a.root.resolve();assert not a.gpg_home.resolve().is_relative_to(root),'Private key directory must be outside the public repository'
 config=json.loads((root/'repository.json').read_text());suite=config['suite'];assert re.fullmatch('[a-z0-9-]+',suite)
+external=assets(root)
+assert all((root/path).is_file() for path in external),'Materialize all pinned release assets before signing indices'
 dist=root/'dists'/suite;dist.mkdir(parents=True,exist_ok=True)
 def digest(data,name='sha256'):return hashlib.new(name,data).hexdigest()
 for component,architectures in config['components'].items():
  assert re.fullmatch('[a-z0-9-]+',component)
  pool=root/'pool'/component;pool.mkdir(parents=True,exist_ok=True);packages=[]
  for deb in sorted(pool.rglob('*.deb')):
-  assert deb.stat().st_size<95*1024*1024,'Package exceeds the chosen static hosting file limit'
+  pool_admission(root,deb,external)
   meta=subprocess.check_output(['dpkg-deb','-f',str(deb)],text=True);fields=dict(line.split(': ',1) for line in meta.splitlines() if ': ' in line and not line.startswith(' '));data=deb.read_bytes();packages.append((fields['Architecture'],meta.rstrip()+'\nFilename: '+str(deb.relative_to(root))+'\nSize: '+str(len(data))+'\nSHA256: '+digest(data)+'\nSHA512: '+digest(data,'sha512')+'\n'))
  for arch in architectures:
   assert re.fullmatch('[a-z0-9-]+',arch)
