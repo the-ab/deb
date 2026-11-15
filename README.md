@@ -4,7 +4,7 @@
 
 Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v32 / 7.3.1-33**, tools **1.0.3**. The previous **7.3.1-odroidu3-v3 / 7.3.1-4** kernel, metapackage and tools remain in the pool for rollback. [Current package/source manifest](publications/u3-server-2026-11-06.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-kernel-7.3.1-33).
 
-Components: `main` for shared packages, `u3` for ODROID-U3. Initial architecture: `armhf`. The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/main/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
+Components: `main` for shared packages, `u3` for ODROID-U3 (`armhf`), and `nas-manager` for NAS iGPU dependencies (`amd64`, plus architecture-independent headers). The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/main/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
 
 ## Client configuration
 
@@ -35,11 +35,36 @@ Run `sudo apt update`. No `apt-key`, `trusted=yes` or unauthenticated mode is re
 1. Add a project component and supported architectures to `repository.json`. Extend shared `main` architecture coverage when needed. Preserve other projects' directories.
 2. Obtain the relevant product's binary release approval and exact matching sources/licenses/checksums. Keep image and large source assets in product Releases.
 3. Copy reviewed `.deb` files into `pool/COMPONENT/`, preserving previous package versions and filenames. Shared keyring packages belong in `main`.
-4. Run `python3 scripts/build-repository.py --root . --gpg-home /private/signing/home --signing-key E85346CA2461E1FA45AC7C7CD85BC090497CE8B9`. The signing key must be outside this repository. The builder creates relative package URLs, SHA256/SHA512, compressed lists, retained by-hash files and signed Release metadata. It rejects packages of 95 MiB or more; also watch the overall Pages site size.
-5. Review indices and package provenance, test downloads and hash/signature failures, commit and push the approved contents. Check the Pages build and HTTPS signature after deployment. Never overwrite a published version with different package bytes.
+4. Run `python3 scripts/build-repository.py --root . --gpg-home /private/signing/home --signing-key E85346CA2461E1FA45AC7C7CD85BC090497CE8B9`. The signing key must be outside this repository. The builder creates relative package URLs, SHA256/SHA512, compressed lists, retained by-hash files and signed Release metadata. The ordinary Git pool keeps its 95 MiB limit. Larger reviewed packages and corresponding sources use immutable release assets declared with exact paths, byte counts and SHA256 in `release-assets.json`; materialize and verify all of them before signing. Never add these materialized files to Git.
+5. Review indices and package provenance, test downloads and hash/signature failures, then commit and push the approved contents. Assemble the complete public site with `python3 scripts/repository_assets.py assemble --root . --site /new/public/site`. This verifies the signed indices, every package and release asset, public-file allowlist and total Pages size, preserving all components and historical by-hash files.
+6. After the reviewed signed commit reaches `main`, dispatch `Publish signed APT site` with its full `expected_sha` on the scoped `deb-pages` self-hosted runner. The workflow downloads only pinned public assets, assembles and verifies the site again, uploads the Pages artifact and deploys it atomically. It has no signing key or NAS/ODROID access. The runner may be ephemeral; no persistent VM is needed. Confirm the completed workflow and public HTTPS signatures/package hashes. Never overwrite a published version with different package bytes.
 
 Private signing material is managed separately and is never committed. Keep a separate protected backup; losing the archive signing key requires a client trust migration. Normal project development does not automatically publish packages.
 
 Official references: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits), [APT source format](https://manpages.debian.org/unstable/apt/sources.list.5.en.html).
 
 Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an existing package version with different bytes. Retirement of obsolete versions requires explicit owner scope and a verified replacement; it never removes installed kernels on clients.
+
+## NAS-Manager dependency updates
+
+[Package, source and copyright manifest](publications/nas-manager-dependencies-2026-11-15.json).
+The six original payloads replace seven installer LFS references with identical
+bytes. The initial guest kernel remains `6.17.13+deb13-amd64`, Debian version
+`6.17.13-1~bpo13+1`; the installed driver remains `2026.09.16`. The older
+`2026.08.02` driver is preserved, not selected for new installations.
+
+The canonical NAS installer sets up the signed `main nas-manager` source for
+`amd64` and installs `nas-manager-igpu-host` or `nas-manager-igpu-guest`. Future
+qualified metapackage versions depend on an exact compatible driver/kernel set.
+After that one-time installer migration, `sudo apt update` followed by
+`sudo apt upgrade` also installs newly named kernel dependencies. Keep fallback
+kernels and reboot deliberately after a kernel/driver update, then run the
+existing hardware checks. This updates iGPU dependencies; it does not replace
+the NAS application's canonical installer.
+
+Matching Debian source archives (including the signed kernel's `Built-Using`
+Linux source) and immutable upstream DKMS source archives are mirrored alongside
+the packages. Their original copyright files remain in `publications/licenses/`;
+the source and package hashes are in the publication manifest. The generated
+metapackages contain only dependencies and target metadata, with no maintainer
+scripts or automatic reboot; their complete builder is in this repository.

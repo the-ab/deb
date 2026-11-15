@@ -1,0 +1,56 @@
+name: Publish signed APT site
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Exact reviewed main commit containing signed indices
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apt-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, Linux, X64, deb-pages]
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Require exact reviewed source
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import os, re
+          expected = os.environ['EXPECTED_SHA']
+          assert re.fullmatch('[0-9a-f]{40}', expected)
+          assert expected == os.environ['SOURCE_SHA'], 'main changed; review the new commit first'
+          PY
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          clean: false
+      - name: Assemble verified public files
+        run: python3 scripts/repository_assets.py assemble --root "$GITHUB_WORKSPACE" --site "$RUNNER_TEMP/apt-pages-site"
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/apt-pages-site
+          include-hidden-files: true
+          retention-days: 1
+      - name: Publish atomic Pages deployment
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

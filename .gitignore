@@ -7,3 +7,4 @@ __pycache__/
 
 # Materialized from exact release asset pins; never store package copies in Git.
 pool/nas-manager/
+sources/nas-manager/

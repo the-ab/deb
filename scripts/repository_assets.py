@@ -43,10 +43,12 @@ def assets(root):
     for row in value["assets"]:
         require(type(row) is dict and set(row) == {"path", "url", "bytes", "sha256"}, "asset fields")
         rel = PurePosixPath(row["path"])
-        require(not rel.is_absolute() and len(rel.parts) == 3 and rel.parts[0] == "pool"
+        require(not rel.is_absolute() and len(rel.parts) == 3 and rel.parts[0] in ("pool", "sources")
                 and all(part not in ("", ".", "..") for part in rel.parts)
                 and re.fullmatch(r"[a-z0-9-]+", rel.parts[1])
-                and re.fullmatch(r"[A-Za-z0-9.+_~%-]+\.deb", rel.name), "asset pool path")
+                and re.fullmatch(r"[A-Za-z0-9.+_~%-]+", rel.name)
+                and (rel.name.endswith(".deb") if rel.parts[0] == "pool" else
+                     rel.name.endswith((".dsc", ".tar.xz", ".tar.gz"))), "asset pool/source path")
         require(str(rel) == row["path"] and row["path"] not in result, "duplicate or noncanonical asset path")
         url = urlsplit(row["url"])
         require(url.scheme == "https" and url.netloc == "github.com" and not url.query and not url.fragment,
@@ -183,12 +185,12 @@ def assemble(root, site):
     site.mkdir(parents=True)
     # Copy only the public repository and package tree, without Git metadata,
     # private files, maintainer scripts or a future accidentally staged secret.
-    for name in ("dists", "pool", "publications"):
+    for name in ("dists", "pool", "sources", "publications"):
         source = root / name
         if source.exists():
             require(not any(p.is_symlink() for p in source.rglob("*")), "public tree contains a symlink")
             shutil.copytree(source, site / name)
-    for name in (".nojekyll", "the-ab-archive-keyring.gpg", "repository.json", "KEYRING.json",
+    for name in (".nojekyll", "the-ab-archive-keyring.gpg", "repository.json", "KEYRING.json", MANIFEST,
                  "README.md", "README.de.md", "LICENSE"):
         source = root / name
         require(source.is_file() and not source.is_symlink(), "missing public site file: " + name)
