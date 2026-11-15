@@ -40,14 +40,14 @@
     {
       "path": "pool/nas-manager/nas-manager-igpu-host_2026.11.15.1_amd64.deb",
       "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/nas-manager-igpu-host_2026.11.15.1_amd64.deb",
-      "bytes": 1092,
-      "sha256": "506b34a292d4c07c4c7900ac3d0fe7194977c9ddaae5b3c755779aabb44ad507"
+      "bytes": 1090,
+      "sha256": "e5eb7b7675f999b17845cad639fbf2e5a1551f6c01a7d729c642deaacb4ce296"
     },
     {
       "path": "pool/nas-manager/nas-manager-igpu-guest_2026.11.15.1_amd64.deb",
       "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/nas-manager-igpu-guest_2026.11.15.1_amd64.deb",
       "bytes": 1176,
-      "sha256": "7704f21af6f99306c17903d9e48601ef922fa6fc280c597eb1a4d590202c6313"
+      "sha256": "49fb2c8fc13b30dde59c9fc814b5e68a20fa7e06bdb09a1e0c775880c083ac0d"
     },
     {
       "path": "sources/nas-manager/linux_6.17.13-1~bpo13+1.dsc",

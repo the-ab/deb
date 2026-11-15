@@ -53,6 +53,9 @@ def main():
             for path in sorted(stage.rglob("*"), reverse=True):
                 path.chmod(0o755 if path.is_dir() else 0o644)
                 os.utime(path, (epoch, epoch), follow_symlinks=False)
+            # mkdtemp may inherit setgid from a shared workspace. The archive's
+            # own root must have a fixed mode as well as fixed child metadata.
+            stage.chmod(0o755)
             os.utime(stage, (epoch, epoch))
             output = args.output / filename
             subprocess.run(["dpkg-deb", "--root-owner-group", "--build", str(stage), str(output)],
