@@ -75,8 +75,10 @@ def pool_admission(root, path, catalogue):
     if rel in catalogue:
         verified(path, catalogue[rel])
         # These payloads are materialized locally or during deployment only.
-        indexed = subprocess.run(["git", "-C", str(root), "ls-files", "--error-unmatch", "--", rel],
+        indexed = subprocess.run(["git", "-c", "safe.directory=" + str(root), "-C", str(root),
+                                  "ls-files", "--error-unmatch", "--", rel],
                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        require(indexed.returncode in (0, 1), "cannot inspect package Git tracking state")
         require(indexed.returncode != 0, "release-backed package must not be tracked in Git")
     else:
         require(path.stat().st_size < GIT_POOL_LIMIT, "ordinary Git pool package exceeds95MiB")
