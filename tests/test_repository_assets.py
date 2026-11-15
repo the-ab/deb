@@ -65,6 +65,14 @@ class ReleaseAssets(unittest.TestCase):
                       url="https://github.com/the-ab/deb/releases/download/test/linux_1.orig.tar.xz")
         self.assertIn(source["path"], self.catalogue(source))
 
+    def test_github_normalized_debian_backports_filename(self):
+        row = dict(self.row, path="pool/nas-manager/linux_1~bpo1_amd64.deb",
+                   url="https://github.com/the-ab/deb/releases/download/test/linux_1.bpo1_amd64.deb")
+        self.assertIn(row["path"], self.catalogue(row))
+        row["url"] = row["url"].replace("1.bpo1", "2.bpo1")
+        with self.assertRaises(ValueError):
+            self.catalogue(row)
+
 
 if __name__ == "__main__":
     unittest.main()

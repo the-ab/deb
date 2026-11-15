@@ -55,11 +55,15 @@ def assets(root):
                 "asset HTTPS origin")
         parts = PurePosixPath(unquote(url.path)).parts
         require(len(parts) == 7 and parts[1:5] == ("the-ab", "deb", "releases", "download")
-                and re.fullmatch(r"[A-Za-z0-9._-]+", parts[5]) and parts[6] == rel.name,
+                and re.fullmatch(r"[A-Za-z0-9._-]+", parts[5])
+                # GitHub normalizes '~' in uploaded release names to '.'.
+                # The APT pool keeps the original Debian filename and bytes.
+                and parts[6] == rel.name.replace("~", "."),
                 "asset release URL")
         require(type(row["bytes"]) is int and 0 < row["bytes"] < SITE_LIMIT
                 and re.fullmatch(r"[0-9a-f]{64}", row["sha256"]), "asset content pin")
         result[row["path"]] = row
+    require(len({row["url"] for row in result.values()}) == len(result), "duplicate release asset URL")
     require(sum(row["bytes"] for row in result.values()) < SITE_LIMIT, "asset set too large")
     return result
 
