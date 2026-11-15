@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "source and local APT flow verified; signed site/publication pending",
+  "status": "Signed complete site verified; public deployment pending",
   "date": "2026-11-15",
   "component": "nas-manager",
   "architectures": [
@@ -227,5 +227,14 @@
       ],
       "mirror_path": "sources/nas-manager/i915-sriov-dkms_2026.09.16.orig.tar.gz"
     }
-  ]
+  ],
+  "validation": {
+    "asset_admission": "six focused tests passed on b42809e50dbd575dbbebd067d2c918200ee6ea1c; builder root-mode correction separately verified with two byte-identical builds",
+    "metapackages": "fixed archive root0755; two independent builds have identical size and SHA256, no maintainer scripts",
+    "signed_site_bytes": 415566665,
+    "package_files": 16,
+    "release_asset_files": 15,
+    "original_ODROID_pool_bytes_unchanged": true,
+    "initial_dependency_versions_unchanged": true
+  }
 }
