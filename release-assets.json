@@ -36,6 +36,18 @@
       "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/i915-sriov-dkms_2026.09.16_amd64.deb",
       "bytes": 2565654,
       "sha256": "8c9dd46e28f67a62728686b0490d65610126f940b28c5d53ca100c060ace3aa2"
+    },
+    {
+      "path": "pool/nas-manager/nas-manager-igpu-host_2026.11.15.1_amd64.deb",
+      "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/nas-manager-igpu-host_2026.11.15.1_amd64.deb",
+      "bytes": 1092,
+      "sha256": "506b34a292d4c07c4c7900ac3d0fe7194977c9ddaae5b3c755779aabb44ad507"
+    },
+    {
+      "path": "pool/nas-manager/nas-manager-igpu-guest_2026.11.15.1_amd64.deb",
+      "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/nas-manager-igpu-guest_2026.11.15.1_amd64.deb",
+      "bytes": 1176,
+      "sha256": "7704f21af6f99306c17903d9e48601ef922fa6fc280c597eb1a4d590202c6313"
     }
   ]
 }

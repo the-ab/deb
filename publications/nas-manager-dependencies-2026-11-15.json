@@ -78,5 +78,39 @@
   "original_package_bytes_unchanged": true,
   "new_kernel_or_driver_build": false,
   "source_license_verification": "pending; package source identities recorded; upstream source/license mapping must be completed before publication",
-  "signature_fingerprint": "E85346CA2461E1FA45AC7C7CD85BC090497CE8B9"
+  "signature_fingerprint": "E85346CA2461E1FA45AC7C7CD85BC090497CE8B9",
+  "metapackages": [
+    {
+      "package": "nas-manager-igpu-host",
+      "version": "2026.11.15.1",
+      "architecture": "amd64",
+      "depends": [
+        "i915-sriov-dkms (= 2026.09.16)"
+      ],
+      "target": {
+        "profile": "igpu-host",
+        "driver_version": "2026.09.16",
+        "kernel": null,
+        "kernel_package_version": null
+      }
+    },
+    {
+      "package": "nas-manager-igpu-guest",
+      "version": "2026.11.15.1",
+      "architecture": "amd64",
+      "depends": [
+        "linux-headers-6.17.13+deb13-amd64 (= 6.17.13-1~bpo13+1)",
+        "linux-headers-6.17.13+deb13-common (= 6.17.13-1~bpo13+1)",
+        "linux-image-6.17.13+deb13-amd64 (= 6.17.13-1~bpo13+1)",
+        "linux-kbuild-6.17.13+deb13 (= 6.17.13-1~bpo13+1)",
+        "i915-sriov-dkms (= 2026.09.16)"
+      ],
+      "target": {
+        "profile": "igpu-guest",
+        "driver_version": "2026.09.16",
+        "kernel": "6.17.13+deb13-amd64",
+        "kernel_package_version": "6.17.13-1~bpo13+1"
+      }
+    }
+  ]
 }
