@@ -28,6 +28,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check publication toolchain
+        run: |
+          for tool in python3 git gpg gpgv tar gzip; do command -v "$tool"; done
       - name: Require exact reviewed source
         env:
           EXPECTED_SHA: ${{ inputs.expected_sha }}
