@@ -31,3 +31,35 @@ Die normale Git-Poolgrenze von 95 MiB bleibt bestehen. Die manuell ausgelöste
 Workflow-Veröffentlichung bindet sich an den geprüften vollständigen Main-SHA;
 der begrenzte `deb-pages`-Runner benötigt weder privaten Archivschlüssel noch
 Zugang zu NAS oder ODROID und kann nach dem Lauf entfernt werden.
+
+## NAS Manager Clean-Install-Prüfpaket
+
+Das Paket `nas-manager-setup` stellt eine Testinstallation für einen frischen
+Proxmox-Host mit Debian-VM100 bereit. APT installiert Git, Git LFS und die
+weiteren Voraussetzungen mit. Auf dem Host wird diese Quelldatei verwendet.
+
+`/etc/apt/sources.list.d/the-ab-nas-manager-igpu-host.sources`
+
+```text
+Types: deb
+URIs: https://the-ab.github.io/deb/
+Suites: stable
+Components: main nas-manager
+Architectures: amd64
+Signed-By: /usr/share/keyrings/the-ab-archive-keyring.gpg
+```
+
+Der öffentliche Schlüsselbund liegt im Wurzelverzeichnis dieses APT-Archivs.
+Seinen Fingerabdruck vor dem Einrichten der Quelle mit dem oben genannten Wert
+abgleichen. Die separat bereitgestellte Entsperrdatei gehört mit Modus `0600`
+nach `/root/nas-manager-setup.key`.
+
+```sh
+apt update
+apt install nas-manager-setup=0.5.10~apt-test.1
+nas-manager-setup --unlock-file /root/nas-manager-setup.key
+```
+
+Nach der Host-Übergabe folgt in VM100 `/root/setup-guest.sh`.
+Das Paket startet bei der APT-Installation keine VM und führt keinen
+Neustart aus. Der private Installer-Quellstand liegt verschlüsselt vor.

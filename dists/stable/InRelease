@@ -5,7 +5,7 @@ Origin: the-ab
 Label: the-ab packages
 Suite: stable
 Codename: stable
-Date: Sun, 15 Nov 2026 13:46:23 +0000
+Date: Fri, 20 Nov 2026 15:38:33 +0000
 Architectures: amd64 armhf
 Components: main u3 nas-manager
 Acquire-By-Hash: yes
@@ -15,8 +15,8 @@ SHA256:
  2c36e452eab0c418fbd8c227e6566cbbf41f1f00803c3b10ba22c0c1fb2f2c31 448 main/binary-amd64/Packages.xz
  ad88ff95848e137641fa90c5be017574c3288e0a3aed1a3636a27a9fd425f69e 537 main/binary-armhf/Packages
  2c36e452eab0c418fbd8c227e6566cbbf41f1f00803c3b10ba22c0c1fb2f2c31 448 main/binary-armhf/Packages.xz
- 12cde95b8c29c544cf7f3bac839488564f54d319b2d5db185122b77825f5df37 7345 nas-manager/binary-amd64/Packages
- 8d0ff539c8997bf75174664c900e638b196e384975176fbd0a4051ba87f94de1 2540 nas-manager/binary-amd64/Packages.xz
+ abf0017815c0f6c4506b768ff94a2b098eb6657c962f4235319b2702cfabb279 8048 nas-manager/binary-amd64/Packages
+ 377ac4072bdf0d2f8b38e341ba0f9c6fd9e04e024747edb0052a9f3ae6fe407d 2820 nas-manager/binary-amd64/Packages.xz
  baeb8a7f11e4c311bb9aaf05dbcd0f9f5e5266fe3665593182830e2116f684cb 4305 u3/binary-armhf/Packages
  4d77abcf3e04f18a17215c4e3592df86c235ed66ae2456c218df987dc9c7b400 1380 u3/binary-armhf/Packages.xz
 SHA512:
@@ -24,14 +24,14 @@ SHA512:
  17d3679e045a215c875f2ae317ad0df2bfd0808590112fd4362ff76f35cfda6bb5bf766fa40d623cda8947fe58f67d631628d9920cd546b41f89ef1e57b50dad 448 main/binary-amd64/Packages.xz
  32717a222b81c24c88372e1026984b818d3b5975f4f40cff617fa297accb6a48be0708a0097218ddffb308ada7ad599a6a4bc21b882ba60d58921f64646c5cbc 537 main/binary-armhf/Packages
  17d3679e045a215c875f2ae317ad0df2bfd0808590112fd4362ff76f35cfda6bb5bf766fa40d623cda8947fe58f67d631628d9920cd546b41f89ef1e57b50dad 448 main/binary-armhf/Packages.xz
- 69fa598e5e3b46647bd6cc1ca67830984517826e3f95893c9847f547a887985a420959b9a6cec03c3669e6253aae68c672f2c23a54785cae60cee9df73e1e43c 7345 nas-manager/binary-amd64/Packages
- 7e4f529ea1cd862b41a8ad7cefff6825b13a2f67caa4afc89bcaa33605ab5fa4d3a647207f0f8b30a3813f63079e72a233822f30a0d8afa24a4ae926b105f579 2540 nas-manager/binary-amd64/Packages.xz
+ 78b5f7e70ec1e86700e75e35f82c70bf9471284bc6daf14c7b6f82f409672e4cba40338f1bab62c1cf80a1feb20171cbdf5eb914a477b8ba49b07014a46df95f 8048 nas-manager/binary-amd64/Packages
+ 5fafb8d54ab4610beb34e52844712bec587eb97c732db48edbb2718bb93f89143d65a69569c2b893c3b5b3b55ae469a2e7265cd8c7a8b9f5d0f7444637b7e804 2820 nas-manager/binary-amd64/Packages.xz
  7ed27f6326691d2e087251aa2f0e57655da445529646543804d2bac8eed09c31727235c359aeba80390067a2104cbdd2d1baba15849363861b2f2dc2457e6a47 4305 u3/binary-armhf/Packages
  ab8ca197fb7d802d4ff51a66e4d78b1928ad328bcec175dd1458a6331a2b2cc962484c3fbb99020ea046904507531413b54bf2ab0a45ca57e2c7342c7d6cd3b2 1380 u3/binary-armhf/Packages.xz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCavm3rwAKCRDYW8CQSXzo
-udZOAQC8Y5tsws6XTlM4fV8qCSJ90w0SUvvRYjAzfBNxyhGz6AD/ccJ8S90L3KcF
-cdq+E7p5fgx0/HsEoqZMB6OkMQWHUQc=
-=UkBV
+iHUEARYIAB0WIQToU0bKJGHh+kWsfHzYW8CQSXzouQUCawBpeQAKCRDYW8CQSXzo
+uccsAQD4iBr+9aw/jbHs2KdO5xRg9h02G1g9dvyw7sBuUhuv5AEAlrMjonzrspQK
+L4EezprXa9vrSTRCBw1VYEAOtvdsfgM=
+=k8AL
 -----END PGP SIGNATURE-----

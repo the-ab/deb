@@ -90,6 +90,12 @@
       "url": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-15/i915-sriov-dkms_2026.09.16.orig.tar.gz",
       "bytes": 3651139,
       "sha256": "b2246470c7a46c4d9bab8d6660cdcffca809c2dfaba629bacd5e9c0b4625a7d9"
+    },
+    {
+      "path": "pool/nas-manager/nas-manager-setup_0.5.10~apt-test.1_amd64.deb",
+      "url": "https://github.com/the-ab/deb/releases/download/nas-manager-setup-0.5.10-apt-test.1/nas-manager-setup_0.5.10.apt-test.1_amd64.deb",
+      "bytes": 30608544,
+      "sha256": "09847111f34bf3ef071d48bd2793d03a377bdac3106008761f40a1229f41a4c8"
     }
   ]
 }
