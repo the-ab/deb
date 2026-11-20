@@ -47,13 +47,13 @@ Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an e
 
 ## NAS Manager clean-install test
 
-The `nas-manager-setup` test package `0.5.10~apt-test.2` is tracked directly
+The `nas-manager-setup` test package `0.5.10~apt-test.3` is tracked directly
 in `pool/nas-manager/` and available for `amd64` in `stable nas-manager`.
 APT installs Git and Git LFS as dependencies. Setup reuses an equivalent
 active signed source and uses `the-ab.sources` when creating one for the host
 or guest. Use the shared `/usr/share/keyrings/the-ab-archive-keyring.gpg`
 keyring. After APT installs the package, start setup explicitly with the
-separately supplied private unlock file.
+separately supplied private unlock file. Run setup again after an APT package upgrade to advance a clean checkout to the verified Git successor.
 [Source configuration and commands](README.de.md#nas-manager-clean-install-prüfpaket)
 
 ## NAS-Manager dependency updates

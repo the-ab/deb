@@ -59,9 +59,11 @@ nach `/root/nas-manager-setup.key`.
 
 ```sh
 apt update
-apt install nas-manager-setup=0.5.10~apt-test.2
+apt install nas-manager-setup=0.5.10~apt-test.3
 nas-manager-setup --unlock-file /root/nas-manager-setup.key
 ```
+
+Nach einem APT-Upgrade den Setup-Befehl erneut ausführen. Der Starter prüft den verifizierten Git-Nachfolger und übernimmt einen sauberen Checkout.
 
 Nach der Host-Übergabe folgt in VM100 `/root/setup-guest.sh`.
 Das Paket startet bei der APT-Installation keine VM und führt keinen
