@@ -4,7 +4,7 @@
 
 Shared signed APT repository at **https://the-ab.github.io/deb/**. Current ODROID-U3 server kernel: **7.3.1-odroidu3-v32 / 7.3.1-33**, tools **1.0.3**. The previous **7.3.1-odroidu3-v3 / 7.3.1-4** kernel, metapackage and tools remain in the pool for rollback. [Current package/source manifest](publications/u3-server-2026-11-06.json) · [Matching sources](https://github.com/the-ab/ODROID/releases/tag/u3-kernel-7.3.1-33).
 
-Components: `main` for shared packages, `u3` for ODROID-U3 (`armhf`), and `nas-manager` for NAS iGPU dependencies (`amd64`, plus architecture-independent headers). The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/main/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
+Components: `main` for shared packages, `u3` for ODROID-U3 (`armhf`), and `nas-manager` for the NAS setup test package and iGPU dependencies (`amd64`, plus architecture-independent headers). The [ODROID kernel update guide](https://github.com/the-ab/ODROID/blob/main/docs/KERNEL-UPDATES.md) describes the board tools, native update/rollback tests and recovery.
 
 ## Client configuration
 
@@ -44,6 +44,15 @@ Private signing material is managed separately and is never committed. Keep a se
 Official references: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits), [APT source format](https://manpages.debian.org/unstable/apt/sources.list.5.en.html).
 
 Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an existing package version with different bytes. Retirement of obsolete versions requires explicit owner scope and a verified replacement; it never removes installed kernels on clients.
+
+## NAS Manager clean-install test
+
+The published `nas-manager-setup` version `0.5.10~apt-test.1` is available on
+`amd64` in `stable nas-manager`. It declares Git and Git LFS as dependencies.
+Use the shared `/usr/share/keyrings/the-ab-archive-keyring.gpg` keyring. After
+APT installs the package, start setup explicitly with the separately supplied
+private unlock file. The fresh Proxmox and Debian guest clean-install test is
+pending. [Source configuration and commands](README.de.md#nas-manager-clean-install-prüfpaket)
 
 ## NAS-Manager dependency updates
 
