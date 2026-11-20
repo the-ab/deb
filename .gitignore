@@ -5,6 +5,7 @@
 __pycache__/
 *.pyc
 
-# Materialized from exact release asset pins; never store package copies in Git.
-pool/nas-manager/
+# Files materialized from the existing release asset pins.
+/pool/nas-manager/linux-image-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb
+/pool/nas-manager/nas-manager-setup_0.5.10~apt-test.1_amd64.deb
 sources/nas-manager/

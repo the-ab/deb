@@ -47,12 +47,14 @@ Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an e
 
 ## NAS Manager clean-install test
 
-The published `nas-manager-setup` version `0.5.10~apt-test.1` is available on
-`amd64` in `stable nas-manager`. It declares Git and Git LFS as dependencies.
-Use the shared `/usr/share/keyrings/the-ab-archive-keyring.gpg` keyring. After
-APT installs the package, start setup explicitly with the separately supplied
-private unlock file. The fresh Proxmox and Debian guest clean-install test is
-pending. [Source configuration and commands](README.de.md#nas-manager-clean-install-prüfpaket)
+The `nas-manager-setup` test package `0.5.10~apt-test.2` is tracked directly
+in `pool/nas-manager/` and available for `amd64` in `stable nas-manager`.
+APT installs Git and Git LFS as dependencies. Setup reuses an equivalent
+active signed source and uses `the-ab.sources` when creating one for the host
+or guest. Use the shared `/usr/share/keyrings/the-ab-archive-keyring.gpg`
+keyring. After APT installs the package, start setup explicitly with the
+separately supplied private unlock file.
+[Source configuration and commands](README.de.md#nas-manager-clean-install-prüfpaket)
 
 ## NAS-Manager dependency updates
 
@@ -74,6 +76,9 @@ the NAS application's canonical installer.
 Matching Debian source archives (including the signed kernel's `Built-Using`
 Linux source) and immutable upstream DKMS source archives are mirrored alongside
 the packages. Their original copyright files remain in `publications/licenses/`;
-the source and package hashes are in the publication manifest. The generated
+the source and package hashes are in the publication manifest. Five original
+dependency packages and both metapackages are tracked in `pool/nas-manager/`.
+The 161.6 MiB kernel image and the matching source archives use the existing
+release asset pins. The generated
 metapackages contain only dependencies and target metadata, with no maintainer
 scripts or automatic reboot; their complete builder is in this repository.

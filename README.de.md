@@ -24,9 +24,10 @@ Die Metapakete nehmen auch neue Kernelpaketnamen mit. Rückfallkernel erhalten,
 Neustart gezielt planen und danach die bisherigen Hardwareprüfungen ausführen.
 Die NAS-Anwendung bleibt im kanonischen Installerweg.
 
-Große NAS-Pakete und passende Quellen liegen mit exakten SHA256-Pins in
-GitHub-Releases. Die Veröffentlichung setzt sie mit allen bestehenden
-ODROID-Paketen und signierten Indizes zur gemeinsamen Pages-Seite zusammen.
+Fünf originale NAS-Abhängigkeiten und beide Metapakete liegen direkt in
+`pool/nas-manager/`. Das 161,6 MiB große Kernelpaket und die zugehörigen
+Quellarchive werden mit exakten SHA256-Pins aus dem bestehenden GitHub-Release
+in die signierte Pages-Veröffentlichung übernommen.
 Die normale Git-Poolgrenze von 95 MiB bleibt bestehen. Die manuell ausgelöste
 Workflow-Veröffentlichung bindet sich an den geprüften vollständigen Main-SHA;
 der begrenzte `deb-pages`-Runner benötigt weder privaten Archivschlüssel noch
@@ -36,9 +37,11 @@ Zugang zu NAS oder ODROID und kann nach dem Lauf entfernt werden.
 
 Das Paket `nas-manager-setup` stellt eine Testinstallation für einen frischen
 Proxmox-Host mit Debian-VM100 bereit. APT installiert Git, Git LFS und die
-weiteren Voraussetzungen mit. Auf dem Host wird diese Quelldatei verwendet.
+weiteren Voraussetzungen mit. Das Setup verwendet eine bereits vorhandene,
+gleichwertige signierte Quelle weiter. Auf einem frisch eingerichteten Host
+oder Gast legt es die Quelldatei unter diesem Namen an.
 
-`/etc/apt/sources.list.d/the-ab-nas-manager-igpu-host.sources`
+`/etc/apt/sources.list.d/the-ab.sources`
 
 ```text
 Types: deb
@@ -56,7 +59,7 @@ nach `/root/nas-manager-setup.key`.
 
 ```sh
 apt update
-apt install nas-manager-setup=0.5.10~apt-test.1
+apt install nas-manager-setup=0.5.10~apt-test.2
 nas-manager-setup --unlock-file /root/nas-manager-setup.key
 ```
 
