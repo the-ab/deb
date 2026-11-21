@@ -197,3 +197,18 @@ Size: 30670112
 SHA256: eb7d44a633ed360946474b3cb28fd48d885f26ca632c5cf52bdb787796f0cb98
 SHA512: 4875bb522e50320a9019080a8bb94a49d3b0e49b4972679d195713b9a7a66d7af6d84f26069af5949832b622ffe935d4e3a01d7db894922377fbd9b258e7d9f6
 
+Package: nas-manager-setup
+Version: 0.5.10~apt-test.8
+Architecture: amd64
+Section: admin
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: bash, ca-certificates, git, git-lfs, gnupg, python3
+Description: NAS Manager clean-install test source for Proxmox VE
+ Provides the pinned Host and guest setup source and its launcher.
+ Run nas-manager-setup explicitly to start host setup.
+Filename: pool/nas-manager/nas-manager-setup_0.5.10~apt-test.8_amd64.deb
+Size: 30656342
+SHA256: b2c681eb888fe5c91685142d9a73d1fbd2f65d96a8d4f50c95de19ebad2c48d5
+SHA512: 1f5ecd897c4bfe0679aca61425ce08e8b9a057af57c475bd2aeb462012e7c642a7c56f6cae796dd7d5bd76e54d3c52a36bf3a76bc9063a0cee43ff1a7f5f64dd
+
