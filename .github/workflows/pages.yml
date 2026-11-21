@@ -21,6 +21,7 @@ jobs:
     runs-on: [self-hosted, Linux, X64, deb-pages]
     timeout-minutes: 15
     permissions:
+      actions: read
       contents: read
       pages: write
       id-token: write
@@ -50,10 +51,44 @@ jobs:
       - name: Assemble verified public files
         run: python3 scripts/repository_assets.py assemble --root "$GITHUB_WORKSPACE" --site "$RUNNER_TEMP/apt-pages-site"
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        id: pages_artifact
         with:
           path: ${{ runner.temp }}/apt-pages-site
           include-hidden-files: true
           retention-days: 1
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ steps.pages_artifact.outputs.artifact_id }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import time
+          from urllib.request import Request, urlopen
+
+          artifact_id = int(os.environ['ARTIFACT_ID'])
+          repository = os.environ['GITHUB_REPOSITORY']
+          run_id = os.environ['GITHUB_RUN_ID']
+          api = os.environ['GITHUB_API_URL']
+          request = Request(
+              f'{api}/repos/{repository}/actions/runs/{run_id}/artifacts?name=github-pages',
+              headers={
+                  'Accept': 'application/vnd.github+json',
+                  'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+              },
+          )
+          for attempt in range(12):
+              with urlopen(request, timeout=10) as response:
+                  artifacts = json.load(response)['artifacts']
+              if any(item['id'] == artifact_id and not item['expired'] for item in artifacts):
+                  print(f'GitHub Pages artifact {artifact_id} is visible')
+                  break
+              if attempt < 11:
+                  time.sleep(4)
+          else:
+              raise SystemExit(f'GitHub Pages artifact {artifact_id} did not become visible')
+          PY
       - name: Publish atomic Pages deployment
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
