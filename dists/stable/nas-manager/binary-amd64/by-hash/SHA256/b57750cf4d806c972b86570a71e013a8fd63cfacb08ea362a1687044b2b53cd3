@@ -1,0 +1,184 @@
+Package: i915-sriov-dkms
+Version: 2026.08.02
+Architecture: amd64
+Maintainer: bbaa <bbaa@bbaa.me>
+Installed-Size: 16409
+Depends: dkms (>= 2.1.0.0), build-essential
+Section: kernel
+Priority: optional
+Homepage: https://github.com/strongtz/i915-sriov-dkms
+Description: Linux i915 driver (dkms module) with SR-IOV support
+Filename: pool/nas-manager/i915-sriov-dkms_2026.08.02_amd64.deb
+Size: 2543432
+SHA256: ba87393280969e2b1209a9d0e2563f3010bfd13626bcc21d4bb7058cb0804cf5
+SHA512: d3642c8ffbfb81028efd8384c5014fe630ccd1af0b75dd0821f1974cbba21a5227794c5a320de0b72e99890185ca5cc89852423b51a1063017f21338a84bb047
+
+Package: i915-sriov-dkms
+Version: 2026.09.16
+Architecture: amd64
+Maintainer: bbaa <bbaa@bbaa.me>
+Installed-Size: 16538
+Depends: dkms (>= 2.1.0.0), build-essential
+Section: kernel
+Priority: optional
+Homepage: https://github.com/strongtz/i915-sriov-dkms
+Description: Linux i915 driver (dkms module) with SR-IOV support
+Filename: pool/nas-manager/i915-sriov-dkms_2026.09.16_amd64.deb
+Size: 2565654
+SHA256: 8c9dd46e28f67a62728686b0490d65610126f940b28c5d53ca100c060ace3aa2
+SHA512: 344d4fc82329813f3583f90723b9cb889f855a227f7ef5e96e234fe1c48c71da690f4a901bd31c7b55822dd0af2eb390c15599aed031a97d98d265135391959a
+
+Package: linux-headers-6.17.13+deb13-amd64
+Source: linux
+Version: 6.17.13-1~bpo13+1
+Architecture: amd64
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Installed-Size: 10454
+Depends: linux-base (>= 4.12~), linux-headers-6.17.13+deb13-common (= 6.17.13-1~bpo13+1), linux-image-6.17.13+deb13-amd64 (= 6.17.13-1~bpo13+1) | linux-image-6.17.13+deb13-amd64-unsigned (= 6.17.13-1~bpo13+1), linux-kbuild-6.17.13+deb13, gcc-14-for-host
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Header files for Linux 6.17.13+deb13-amd64
+ This package provides the architecture-specific kernel header files for
+ Linux kernel 6.17.13+deb13-amd64, generally used for building out-of-tree
+ kernel modules.  These files are going to be installed into
+ /usr/src/linux-headers-6.17.13+deb13-amd64, and can be used for building
+ modules that load into the kernel provided by the
+ linux-image-6.17.13+deb13-amd64 package.
+Filename: pool/nas-manager/linux-headers-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb
+Size: 2786100
+SHA256: 752c712768b86b7bbfca7fd94d6b954438b956065ab728db42d71cfae244c762
+SHA512: e5d83cb09143bc1a462e0299ef076ec9b5f7bd0c8e395cbf71cb8fc32939867511d5c1ef4ffe7f2f458486c76cfcbce033116df8620125c885db6030dd33c3d5
+
+Package: linux-headers-6.17.13+deb13-common
+Source: linux
+Version: 6.17.13-1~bpo13+1
+Architecture: all
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Installed-Size: 63417
+Section: kernel
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://www.kernel.org/
+Description: Common header files for Linux 6.17.13+deb13
+ This package provides the common kernel header files for Linux kernel
+ version 6.17.13+deb13, generally used for building out-of-tree kernel
+ modules.  These files are going to be installed into
+ /usr/src/linux-headers-6.17.13+deb13-common.
+ .
+ To obtain a complete set of headers you also need to install the
+ linux-headers-6.17.13+deb13-(flavour) package, matching the flavour of the
+ kernel you intend the build for.
+Filename: pool/nas-manager/linux-headers-6.17.13+deb13-common_6.17.13-1~bpo13+1_all.deb
+Size: 11174956
+SHA256: 85998501828bfb1d3d517ff0e698f8eada209b7642f989fd7e5d47e1912123ab
+SHA512: 2a4b0b66421af6e535f440b4a1e1f847e991b757a052ce73ca53d90f4804dfaf3bb3077e4da6c483b867bcce1a28d450d1c21d4e6e091a94ff85e574425c445e
+
+Package: linux-image-6.17.13+deb13-amd64
+Source: linux-signed-amd64 (6.17.13+1~bpo13+1)
+Version: 6.17.13-1~bpo13+1
+Architecture: amd64
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Installed-Size: 168140
+Pre-Depends: linux-base (>= 4.12~)
+Depends: kmod, initramfs-tools (>= 0.120+deb8u2) | linux-initramfs-tool
+Recommends: apparmor
+Suggests: firmware-linux-free, linux-doc-6.17, debian-kernel-handbook, grub-pc | grub-efi-amd64 | extlinux
+Conflicts: linux-image-6.17.13+deb13-amd64-unsigned
+Breaks: fwupdate (<< 12-7), initramfs-tools (<< 0.120+deb8u2), wireless-regdb (<< 2019.06.03-1~)
+Replaces: linux-image-6.17.13+deb13-amd64-unsigned
+Built-Using: linux (= 6.17.13-1~bpo13+1)
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux 6.17.13 for 64-bit PCs (signed)
+ The Linux kernel 6.17.13 and modules for use on PCs with AMD64, Intel 64
+ or VIA Nano processors.
+ .
+ The kernel image is signed for use with Secure Boot.
+Filename: pool/nas-manager/linux-image-6.17.13+deb13-amd64_6.17.13-1~bpo13+1_amd64.deb
+Size: 169470672
+SHA256: 4c0643e5db69d9248f4139ec0c765671a2585aa53fc498dcc49b102fd5766696
+SHA512: 3127f415f2008f21336eee8a6efe55a4279fbcaaff60866c3212517a83a3486711ffa5bb1cbe8ba3ace8cd7054cd4b111d603020eca3dbaa7fe3c7f1eb8f1f9b
+
+Package: linux-kbuild-6.17.13+deb13
+Source: linux
+Version: 6.17.13-1~bpo13+1
+Architecture: amd64
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Installed-Size: 2794
+Depends: libc6 (>= 2.38), libelf1t64 (>= 0.144), libssl3t64 (>= 3.0.0), zlib1g (>= 1:1.2.3.3), python3:any, pahole
+Section: kernel
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://www.kernel.org/
+Description: Kbuild infrastructure for Linux 6.17.13+deb13
+ This package provides the kbuild infrastructure for the headers packages
+ for Linux kernel version 6.17.
+Filename: pool/nas-manager/linux-kbuild-6.17.13+deb13_6.17.13-1~bpo13+1_amd64.deb
+Size: 1417104
+SHA256: 2b234e8c35bad4bbbd3d0105f4f5350642df17c484d5863cecd78878baa39c3f
+SHA512: d2c72ba8aaf87c5ca00f9f3981a845937ae7da50ba20ceabe0c0583aa713633c24dbd58a1df574822f7f9f22e33fcd52a99784c39f9582f73d10657febb9a638
+
+Package: nas-manager-igpu-guest
+Version: 2026.11.15.1
+Architecture: amd64
+Section: metapackages
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Homepage: https://github.com/the-ab/deb
+Depends: linux-headers-6.17.13+deb13-amd64 (= 6.17.13-1~bpo13+1), linux-headers-6.17.13+deb13-common (= 6.17.13-1~bpo13+1), linux-image-6.17.13+deb13-amd64 (= 6.17.13-1~bpo13+1), linux-kbuild-6.17.13+deb13 (= 6.17.13-1~bpo13+1), i915-sriov-dkms (= 2026.09.16)
+Description: NAS Manager qualified iGPU dependency profile
+ Tracks the matched kernel/headers/driver package set through APT.
+ Kernel activation requires a separately planned reboot.
+Filename: pool/nas-manager/nas-manager-igpu-guest_2026.11.15.1_amd64.deb
+Size: 1176
+SHA256: 49fb2c8fc13b30dde59c9fc814b5e68a20fa7e06bdb09a1e0c775880c083ac0d
+SHA512: 0310c06ad48ac7135e07b2b6c15074a62c0b80fbd1f295d9ff8d96a194bf43788945785cc2c6407e17afb474f04d60e26a4734c83b64ce53f5d4bd739711b51f
+
+Package: nas-manager-igpu-host
+Version: 2026.11.15.1
+Architecture: amd64
+Section: metapackages
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Homepage: https://github.com/the-ab/deb
+Depends: i915-sriov-dkms (= 2026.09.16)
+Description: NAS Manager qualified iGPU dependency profile
+ Tracks the matched kernel/headers/driver package set through APT.
+ Kernel activation requires a separately planned reboot.
+Filename: pool/nas-manager/nas-manager-igpu-host_2026.11.15.1_amd64.deb
+Size: 1090
+SHA256: e5eb7b7675f999b17845cad639fbf2e5a1551f6c01a7d729c642deaacb4ce296
+SHA512: d662ed056289b4fd79d7205122bb9f574d7d623ed6a1664f9295e5bad1815ce437ea00927a7ffa36abf81ca458c5897bb4e2e68307f261866cf6eba00c2db270
+
+Package: nas-manager-setup
+Version: 0.5.10~apt-test.3
+Architecture: amd64
+Section: admin
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: bash, ca-certificates, git, git-lfs, gnupg, python3
+Description: NAS Manager clean-install test source for Proxmox VE
+ Provides the pinned Host and guest setup source and its launcher.
+ Run nas-manager-setup explicitly to start host setup.
+Filename: pool/nas-manager/nas-manager-setup_0.5.10~apt-test.3_amd64.deb
+Size: 30594048
+SHA256: 51c7f0bb21e5cc3ba7763aa16f98f8a0d3c2c59e34d7a6d3d554c88aa6ebb9a4
+SHA512: ecc5a659e513d6c512e3249dfc99be4f8b01ba4996d8480626fd49657c8811ddb76d45af172180df4ca992ef137c410b981f1e3312d2415918bea3a322d70a85
+
+Package: nas-manager-setup
+Version: 0.5.10~apt-test.5
+Architecture: amd64
+Section: admin
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: bash, ca-certificates, git, git-lfs, gnupg, python3
+Description: NAS Manager clean-install test source for Proxmox VE
+ Provides the pinned Host and guest setup source and its launcher.
+ Run nas-manager-setup explicitly to start host setup.
+Filename: pool/nas-manager/nas-manager-setup_0.5.10~apt-test.5_amd64.deb
+Size: 30675666
+SHA256: 8daa47389b2018f2cfdd8580be92cfc34f8d5ee5724699d1a83f05da5884115a
+SHA512: 12eb384e5a5b80e3db553b643ce8532e53d3d8b75b52758ecf8ede459e5409497883c8aeddb13ea5e1de7583d8ddd42340b369cd00f7501f0e10b1df2621dcc4
+

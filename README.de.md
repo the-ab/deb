@@ -59,7 +59,7 @@ nach `/root/nas-manager-setup.key`.
 
 ```sh
 apt update
-apt install nas-manager-setup=0.5.10~apt-test.3
+apt install nas-manager-setup=0.5.10~apt-test.5
 nas-manager-setup --unlock-file /root/nas-manager-setup.key
 ```
 
