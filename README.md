@@ -47,7 +47,7 @@ Tools 1.0.3 install versioned files directly under `/boot`. Never overwrite an e
 
 ## NAS Manager clean-install test
 
-The `nas-manager-setup` test package `0.5.10~apt-test.5` is tracked directly
+The `nas-manager-setup` test package `0.5.10~apt-test.7` is tracked directly
 in `pool/nas-manager/` and available for `amd64` in `stable nas-manager`.
 APT installs Git and Git LFS as dependencies. Setup reuses an equivalent
 active signed source and uses `the-ab.sources` when creating one for the host
