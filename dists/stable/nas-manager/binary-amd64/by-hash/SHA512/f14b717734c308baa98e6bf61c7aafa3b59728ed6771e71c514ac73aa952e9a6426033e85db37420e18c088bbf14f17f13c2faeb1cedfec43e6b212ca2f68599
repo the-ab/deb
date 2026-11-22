@@ -1,0 +1,93 @@
+Package: i915-sriov-dkms
+Version: 2026.11.05
+Architecture: amd64
+Maintainer: bbaa <bbaa@bbaa.me>
+Installed-Size: 16722
+Depends: dkms (>= 2.1.0.0), build-essential
+Section: kernel
+Priority: optional
+Homepage: https://github.com/strongtz/i915-sriov-dkms
+Description: Linux i915 driver (dkms module) with SR-IOV support
+Filename: pool/nas-manager/i915-sriov-dkms_2026.11.05_amd64.deb
+Size: 2600528
+SHA256: 7f1f5c199e3c726cbd653983994c700079d87d99444ad6bd33214be32f11e3ed
+SHA512: 5371fe8b005a0c52a20e510cca5192ee758042a791896c80f016ca3f01bb226699c641e0302bad70bc47b003562ec8f97e6d3ba848d61732681617ee7bb2f8e9
+
+Package: linux-headers-6.18.64-nas-manager-lts
+Source: linux-nas-manager
+Version: 6.18.64-1+nas1
+Architecture: amd64
+Maintainer: NAS Manager Kernel Build <builds@example.invalid>
+Installed-Size: 58586
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel headers for 6.18.64-nas-manager-lts on amd64
+ This package provides kernel header files for 6.18.64-nas-manager-lts on amd64
+ .
+ This is useful for people who need to build external modules
+Filename: pool/nas-manager/linux-headers-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb
+Size: 10294584
+SHA256: 7c1db2c0529d6dfaf1e6e81a770f05fa3be7a564409cfcc6d7ea808463a5603c
+SHA512: 4c86643b919271e4c66d599f48d793201572f69e9b91130231de9a9e37882c9919f21d25c4281994ed5bffb1aba4b8171d13a26195701645af31e68000ec88c5
+
+Package: linux-image-6.18.64-nas-manager-lts
+Source: linux-nas-manager
+Version: 6.18.64-1+nas1
+Architecture: amd64
+Maintainer: NAS Manager Kernel Build <builds@example.invalid>
+Installed-Size: 181412
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel, version 6.18.64-nas-manager-lts
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.18.64-nas-manager-lts.
+Filename: pool/nas-manager/linux-image-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb
+Size: 171071944
+SHA256: d9644e849ad20904efa8dd0a454238478bad0752cee762d10a28b97f8e99d5a9
+SHA512: fbc5c5cc4435c59cdbf10d4148b2621deef2cbf00fa9455a82388c6c8145e892b6f5b9cc18094a677889c3148036f89ba56478c5ea0d4932752ffeb9f3948765
+
+Package: nas-manager-igpu-guest
+Version: 1:0.5.10~dev-2
+Architecture: amd64
+Section: metapackages
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: i915-sriov-dkms (= 2026.11.05), linux-image-6.18.64-nas-manager-lts (= 6.18.64-1+nas1), linux-headers-6.18.64-nas-manager-lts (= 6.18.64-1+nas1), zfs-dkms (>= 2.4.4), zfsutils-linux (>= 2.4.4), zfs-zed (>= 2.4.4)
+Description: NAS Manager qualified iGPU dependency profile
+ Tracks the matched Intel VF driver and, for the guest, the kernel.
+Filename: pool/nas-manager/nas-manager-igpu-guest_0.5.10-dev-2_amd64.deb
+Size: 872
+SHA256: d6f313bf44093d9fa09da365125ebdaf7c30764d620c4487046508f19a3d1983
+SHA512: 646207d18f2977b06416b636ef92a7c9bc2d2aa58ab135fb2dd09e19eb3b904dc66280a53644bc010da523a456ba79428d12da2728c0f444ec2870b1a82549d3
+
+Package: nas-manager-igpu-host
+Version: 1:0.5.10~dev-2
+Architecture: amd64
+Section: metapackages
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: i915-sriov-dkms (= 2026.11.05)
+Description: NAS Manager qualified iGPU dependency profile
+ Tracks the matched Intel VF driver and, for the guest, the kernel.
+Filename: pool/nas-manager/nas-manager-igpu-host_0.5.10-dev-2_amd64.deb
+Size: 790
+SHA256: 11a458f754ca88a3180c3ecd36d34dbcb6784a1de46eb592958da57dc1a43ce2
+SHA512: 00ad0bb4f17151e52a15faf26ab0c55afe2ab686895bce8afc7b4e46ca95d2ba06b42533031ded5c4ed91686421bcccc81b856ab4bca16e9b885def369c95483
+
+Package: nas-manager-setup
+Version: 0.5.10~dev-11+git
+Architecture: amd64
+Section: admin
+Priority: optional
+Maintainer: the-ab <ab.insidex@googlemail.com>
+Depends: bash, ca-certificates, git, git-lfs, python3, gnupg
+Description: NAS Manager setup source for Proxmox VE
+ Provides the pinned Host and guest setup source and its launcher.
+ Run nas-manager-setup explicitly to start host setup.
+Filename: pool/nas-manager/nas-manager-setup_0.5.10-dev-11_git_amd64.deb
+Size: 34168482
+SHA256: 675c3404bf8532611bfd42c59693e6f18c59e56e25217ac7387d3ab69bb66ce8
+SHA512: 3487d1a562adfeea1abd5f8398c7ade0b9ecab6a06afe3e3100fe6c26d70b41c9117b13eadb85f71a727a331dd6140c8b59444761e9bd4ff474f88417bc666ff
+

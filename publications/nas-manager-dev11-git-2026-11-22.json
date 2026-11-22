@@ -1,0 +1,64 @@
+{
+  "distribution": "stable",
+  "component": "nas-manager",
+  "setup_payload": "OpenPGP-encrypted installer source",
+  "packages": [
+    {
+      "package": "linux-headers-6.18.64-nas-manager-lts",
+      "version": "6.18.64-1+nas1",
+      "architecture": "amd64",
+      "bytes": 10294584,
+      "sha256": "7c1db2c0529d6dfaf1e6e81a770f05fa3be7a564409cfcc6d7ea808463a5603c",
+      "path": "pool/nas-manager/linux-headers-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb"
+    },
+    {
+      "package": "linux-image-6.18.64-nas-manager-lts",
+      "version": "6.18.64-1+nas1",
+      "architecture": "amd64",
+      "bytes": 171071944,
+      "sha256": "d9644e849ad20904efa8dd0a454238478bad0752cee762d10a28b97f8e99d5a9",
+      "path": "pool/nas-manager/linux-image-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb"
+    },
+    {
+      "package": "i915-sriov-dkms",
+      "version": "2026.11.05",
+      "architecture": "amd64",
+      "bytes": 2600528,
+      "sha256": "7f1f5c199e3c726cbd653983994c700079d87d99444ad6bd33214be32f11e3ed",
+      "path": "pool/nas-manager/i915-sriov-dkms_2026.11.05_amd64.deb"
+    },
+    {
+      "package": "nas-manager-igpu-host",
+      "version": "1:0.5.10~dev-2",
+      "architecture": "amd64",
+      "bytes": 790,
+      "sha256": "11a458f754ca88a3180c3ecd36d34dbcb6784a1de46eb592958da57dc1a43ce2",
+      "path": "pool/nas-manager/nas-manager-igpu-host_0.5.10-dev-2_amd64.deb"
+    },
+    {
+      "package": "nas-manager-igpu-guest",
+      "version": "1:0.5.10~dev-2",
+      "architecture": "amd64",
+      "bytes": 872,
+      "sha256": "d6f313bf44093d9fa09da365125ebdaf7c30764d620c4487046508f19a3d1983",
+      "path": "pool/nas-manager/nas-manager-igpu-guest_0.5.10-dev-2_amd64.deb"
+    },
+    {
+      "package": "nas-manager-setup",
+      "version": "0.5.10~dev-11+git",
+      "bytes": 34168482,
+      "sha256": "675c3404bf8532611bfd42c59693e6f18c59e56e25217ac7387d3ab69bb66ce8",
+      "architecture": "amd64",
+      "path": "pool/nas-manager/nas-manager-setup_0.5.10-dev-11_git_amd64.deb"
+    }
+  ],
+  "corresponding_sources": {
+    "linux": [
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/linux-6.18.64.tar.xz",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/linux-6.18.64.tar.sign",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/kernel.config",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/build-kernel.sh"
+    ],
+    "i915-sriov-dkms": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/i915-sriov-dkms_2026.11.05-source.tar.xz"
+  }
+}
