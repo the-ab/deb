@@ -56,7 +56,8 @@ jobs:
           path: ${{ runner.temp }}/apt-pages-site
           include-hidden-files: true
           retention-days: 1
-      - name: Wait for Pages artifact metadata
+      - name: Publish the verified Pages artifact
+        id: deployment
         env:
           GH_TOKEN: ${{ github.token }}
           ARTIFACT_ID: ${{ steps.pages_artifact.outputs.artifact_id }}
@@ -64,31 +65,64 @@ jobs:
           python3 - <<'PY'
           import json
           import os
+          import re
           import time
+          from urllib.error import HTTPError
           from urllib.request import Request, urlopen
 
           artifact_id = int(os.environ['ARTIFACT_ID'])
-          repository = os.environ['GITHUB_REPOSITORY']
-          run_id = os.environ['GITHUB_RUN_ID']
-          api = os.environ['GITHUB_API_URL']
-          request = Request(
-              f'{api}/repos/{repository}/actions/runs/{run_id}/artifacts?name=github-pages',
-              headers={
-                  'Accept': 'application/vnd.github+json',
-                  'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
-              },
-          )
+          repo_api = f"{os.environ['GITHUB_API_URL']}/repos/{os.environ['GITHUB_REPOSITORY']}"
+          run_api = f"{repo_api}/actions/runs/{int(os.environ['GITHUB_RUN_ID'])}"
+          pages_api = f'{repo_api}/pages/deployments'
+          sha = os.environ['GITHUB_SHA']
+
+          def request(url, token, payload=None):
+              headers = {'Accept': 'application/vnd.github+json', 'Authorization': f'Bearer {token}'}
+              data = None
+              if payload is not None:
+                  headers['Content-Type'] = 'application/json'
+                  data = json.dumps(payload).encode()
+              with urlopen(Request(url, data=data, headers=headers), timeout=15) as response:
+                  return json.load(response)
+
+          token = os.environ['GH_TOKEN']
           for attempt in range(12):
-              with urlopen(request, timeout=10) as response:
-                  artifacts = json.load(response)['artifacts']
-              if any(item['id'] == artifact_id and not item['expired'] for item in artifacts):
+              artifacts = request(f'{run_api}/artifacts?name=github-pages', token)['artifacts']
+              if any(item['id'] == artifact_id and item['name'] == 'github-pages'
+                     and not item['expired'] for item in artifacts):
                   print(f'GitHub Pages artifact {artifact_id} is visible')
                   break
               if attempt < 11:
                   time.sleep(4)
           else:
               raise SystemExit(f'GitHub Pages artifact {artifact_id} did not become visible')
+
+          oidc = request(os.environ['ACTIONS_ID_TOKEN_REQUEST_URL'],
+                         os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN'])['value']
+          deployment = request(pages_api, token, {
+              'artifact_id': artifact_id, 'pages_build_version': sha, 'oidc_token': oidc,
+          })
+          deployment_id = str(deployment['id'])
+          assert re.fullmatch(r'[a-f0-9]{40}|[0-9]+', deployment_id)
+          page_url = deployment['page_url']
+          assert page_url.startswith('https://') and '\n' not in page_url and '\r' not in page_url
+          print(f'Created GitHub Pages deployment {deployment_id}')
+          deadline = time.monotonic() + 420
+          while time.monotonic() < deadline:
+              try:
+                  status = request(f'{pages_api}/{deployment_id}/status', token)['status']
+              except HTTPError as error:
+                  if error.code != 404 and error.code < 500:
+                      raise
+              else:
+                  if status == 'succeed':
+                      with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                          print(f'page_url={page_url}', file=output)
+                      break
+                  if status in {'deployment_failed', 'deployment_content_failed',
+                                'deployment_cancelled', 'deployment_lost'}:
+                      raise SystemExit(f'GitHub Pages deployment failed: {status}')
+              time.sleep(6)
+          else:
+              raise SystemExit(f'GitHub Pages deployment {deployment_id} timed out')
           PY
-      - name: Publish atomic Pages deployment
-        id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
