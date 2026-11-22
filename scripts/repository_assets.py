@@ -187,13 +187,17 @@ def assemble(root, site):
     require(all((root / rel).exists() for rel in catalogue), "missing release assets")
     verify_site(root)
     site.mkdir(parents=True)
-    # Copy only the public repository and package tree, without Git metadata,
-    # private files, maintainer scripts or a future accidentally staged secret.
-    for name in ("dists", "pool", "sources", "publications"):
+    # The runner can keep materialized assets from older commits. Publish
+    # tracked public paths and the current pins, independent of those files.
+    tracked = subprocess.check_output(["git", "-C", str(root), "ls-files", "-z", "--",
+                                       "dists", "pool", "sources", "publications"])
+    paths = {os.fsdecode(path) for path in tracked.split(b"\0") if path} | set(catalogue)
+    for name in sorted(paths):
         source = root / name
-        if source.exists():
-            require(not any(p.is_symlink() for p in source.rglob("*")), "public tree contains a symlink")
-            shutil.copytree(source, site / name)
+        require(source.is_file() and source.resolve() == source, "invalid public file: " + name)
+        target = site / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
     for name in (".nojekyll", "the-ab-archive-keyring.gpg", "repository.json", "KEYRING.json", MANIFEST,
                  "README.md", "README.de.md", "LICENSE"):
         source = root / name

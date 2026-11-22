@@ -110,7 +110,7 @@ jobs:
           deadline = time.monotonic() + 420
           while time.monotonic() < deadline:
               try:
-                  status = request(f'{pages_api}/{deployment_id}/status', token)['status']
+                  status = request(f'{pages_api}/{deployment_id}', token)['status']
               except HTTPError as error:
                   if error.code != 404 and error.code < 500:
                       raise
