@@ -1,0 +1,84 @@
+{
+  "distribution": "stable",
+  "component": "nas-manager",
+  "setup_payload": "OpenPGP-encrypted installer source",
+  "supersedes_setup": "0.5.10~dev-11+git",
+  "packages": [
+    {
+      "package": "linux-headers-6.18.64-nas-manager-lts",
+      "version": "6.18.64-1+nas1",
+      "architecture": "amd64",
+      "bytes": 10294584,
+      "sha256": "7c1db2c0529d6dfaf1e6e81a770f05fa3be7a564409cfcc6d7ea808463a5603c",
+      "path": "pool/nas-manager/linux-headers-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb"
+    },
+    {
+      "package": "linux-image-6.18.64-nas-manager-lts",
+      "version": "6.18.64-1+nas1",
+      "architecture": "amd64",
+      "bytes": 171071944,
+      "sha256": "d9644e849ad20904efa8dd0a454238478bad0752cee762d10a28b97f8e99d5a9",
+      "path": "pool/nas-manager/linux-image-6.18.64-nas-manager-lts_6.18.64-1+nas1_amd64.deb"
+    },
+    {
+      "package": "i915-sriov-dkms",
+      "version": "2026.11.05",
+      "architecture": "amd64",
+      "bytes": 2600528,
+      "sha256": "7f1f5c199e3c726cbd653983994c700079d87d99444ad6bd33214be32f11e3ed",
+      "path": "pool/nas-manager/i915-sriov-dkms_2026.11.05_amd64.deb"
+    },
+    {
+      "package": "nas-manager-igpu-host",
+      "version": "1:0.5.10~dev-2",
+      "architecture": "amd64",
+      "bytes": 790,
+      "sha256": "11a458f754ca88a3180c3ecd36d34dbcb6784a1de46eb592958da57dc1a43ce2",
+      "path": "pool/nas-manager/nas-manager-igpu-host_0.5.10-dev-2_amd64.deb"
+    },
+    {
+      "package": "nas-manager-igpu-guest",
+      "version": "1:0.5.10~dev-2",
+      "architecture": "amd64",
+      "bytes": 872,
+      "sha256": "d6f313bf44093d9fa09da365125ebdaf7c30764d620c4487046508f19a3d1983",
+      "path": "pool/nas-manager/nas-manager-igpu-guest_0.5.10-dev-2_amd64.deb"
+    },
+    {
+      "package": "mdadm",
+      "version": "4.6-3~bpo13+nas1",
+      "architecture": "amd64",
+      "path": "pool/nas-manager/mdadm_4.6-3-bpo13+nas1_amd64.deb",
+      "bytes": 452624,
+      "sha256": "e88eb6756825d0dd7c6382a8566ccb650bbefe72c218ff5dfd26fb0dcbdb47f7"
+    },
+    {
+      "package": "nas-manager-setup",
+      "version": "0.5.10~dev-22+git",
+      "architecture": "amd64",
+      "path": "pool/nas-manager/nas-manager-setup_0.5.10-dev-22_git_amd64.deb",
+      "bytes": 34328056,
+      "sha256": "a614ef73a94692e9d06868df0d03c67d85c88c94424c57b7997a1eba558ba162"
+    }
+  ],
+  "corresponding_sources": {
+    "linux": [
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/linux-6.18.64.tar.xz",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/linux-6.18.64.tar.sign",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/kernel.config",
+      "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/build-kernel.sh"
+    ],
+    "i915-sriov-dkms": "https://github.com/the-ab/deb/releases/download/nas-manager-dependencies-2026-11-22/i915-sriov-dkms_2026.11.05-source.tar.xz",
+    "mdadm": {
+      "source_package": "mdadm",
+      "debian_version": "4.6-3",
+      "url": "https://snapshot.debian.org/package/mdadm/4.6-3/",
+      "sha256": {
+        "mdadm_4.6-3.dsc": "7b75c97a9dc7e3bd154f97c4c506ad8f210b1e2fe005adc6bdc649d22217752d",
+        "mdadm_4.6-3.debian.tar.xz": "53e97c32a6ce33be6d0e4884589dd6a19f57ee4ff54812096b00d9bf7361c176",
+        "mdadm_4.6.orig.tar.xz": "42d089a9a27f5ce8fb3a0ecf8f48b489ceae70c374e6ea79bc279a78ced72525"
+      },
+      "backport_packaging_changes": "Rebuild for Debian 13 with debhelper-compat 13 and a changelog entry for 4.6-3~bpo13+nas1."
+    }
+  }
+}

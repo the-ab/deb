@@ -48,6 +48,28 @@ Size: 171071944
 SHA256: d9644e849ad20904efa8dd0a454238478bad0752cee762d10a28b97f8e99d5a9
 SHA512: fbc5c5cc4435c59cdbf10d4148b2621deef2cbf00fa9455a82388c6c8145e892b6f5b9cc18094a677889c3148036f89ba56478c5ea0d4932752ffeb9f3948765
 
+Package: mdadm
+Version: 4.6-3~bpo13+nas1
+Architecture: amd64
+Maintainer: Daniel Baumann <daniel@debian.org>
+Installed-Size: 1302
+Depends: udev, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.38), libudev1 (>= 183)
+Recommends: kmod
+Suggests: default-mta | mail-transport-agent
+Section: admin
+Priority: optional
+Homepage: https://github.com/md-raid-utilities/mdadm
+Description: tool for managing Linux MD devices (software RAID)
+ The mdadm tool is used to create, manage, and monitor Linux MD (software
+ RAID) devices.
+ .
+ This package configures mdadm to by default assemble arrays automatically
+ during the system startup process.
+Filename: pool/nas-manager/mdadm_4.6-3-bpo13+nas1_amd64.deb
+Size: 452624
+SHA256: e88eb6756825d0dd7c6382a8566ccb650bbefe72c218ff5dfd26fb0dcbdb47f7
+SHA512: a1c2de13e92076e9526c9a701e00ec29dae90811730e0fcef787d7fd836f2dcc5b2ebcde28b32c1bd13cea3436553490abd17827b9b610c21a5f446da2365bca
+
 Package: nas-manager-igpu-guest
 Version: 1:0.5.10~dev-2
 Architecture: amd64
@@ -77,7 +99,7 @@ SHA256: 11a458f754ca88a3180c3ecd36d34dbcb6784a1de46eb592958da57dc1a43ce2
 SHA512: 00ad0bb4f17151e52a15faf26ab0c55afe2ab686895bce8afc7b4e46ca95d2ba06b42533031ded5c4ed91686421bcccc81b856ab4bca16e9b885def369c95483
 
 Package: nas-manager-setup
-Version: 0.5.10~dev-11+git
+Version: 0.5.10~dev-22+git
 Architecture: amd64
 Section: admin
 Priority: optional
@@ -86,8 +108,8 @@ Depends: bash, ca-certificates, git, git-lfs, python3, gnupg
 Description: NAS Manager setup source for Proxmox VE
  Provides the pinned Host and guest setup source and its launcher.
  Run nas-manager-setup explicitly to start host setup.
-Filename: pool/nas-manager/nas-manager-setup_0.5.10-dev-11_git_amd64.deb
-Size: 34168482
-SHA256: 675c3404bf8532611bfd42c59693e6f18c59e56e25217ac7387d3ab69bb66ce8
-SHA512: 3487d1a562adfeea1abd5f8398c7ade0b9ecab6a06afe3e3100fe6c26d70b41c9117b13eadb85f71a727a331dd6140c8b59444761e9bd4ff474f88417bc666ff
+Filename: pool/nas-manager/nas-manager-setup_0.5.10-dev-22_git_amd64.deb
+Size: 34328056
+SHA256: a614ef73a94692e9d06868df0d03c67d85c88c94424c57b7997a1eba558ba162
+SHA512: 629d274535b320cf1f0d7f51b8a2b34ab99a3a2358cf2ddd507039de031c434ae4278bd0f201c960693b19fffe87238466ff8455a9bb8dd5a9571bf7aa4da953
 
